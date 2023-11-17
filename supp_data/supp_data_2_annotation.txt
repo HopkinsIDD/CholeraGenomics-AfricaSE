@@ -514,10 +514,10 @@ CNRVC100278	2010	America	Haiti		HTI	3		ERR1878592	Weill et al. Science 2017	Publ
 SRR308715	2010	Asia	Nepal	Nepalgunj	NPL	3		SRR308715	Hendriksen et al. Mbio 2011	Published genomes	TRUE	TRUE
 SRR308727	2010	Asia	Nepal	Butawal	NPL	3		SRR308727	Hendriksen et al. Mbio 2011	Published genomes	TRUE	TRUE
 SRR308726	2010	Asia	Nepal	Butawal	NPL	3		SRR308726	Hendriksen et al. Mbio 2011	Published genomes	TRUE	TRUE
-KEN-2009-097	2009	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2015-005	2015	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-097	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 1			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2015-005	2015	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 1			Genomes sequenced in this paper	TRUE	TRUE
 7298_7_34	2009	Africa	Kenya	Kilifi	KEN	3	sporadic/local outbreak	ERR117600	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-TZA-2018-052	2018	Africa	Tanzania	Arusha	TZA	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-052	2018	Africa	Tanzania	Arusha	TZA	3	sporadic outbreak/ new lineage 1			Genomes sequenced in this paper	TRUE	TRUE
 12971_4_67	2010	Africa	Togo		TGO	3	AFR12	ERR572580	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 12971_4_77	2012	Africa	Togo		TGO	3	AFR12	ERR572590	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 12971_4_72	2011	Africa	Togo		TGO	3	AFR12	ERR572585	Weill et al. Science 2017	Published genomes	TRUE	TRUE
@@ -626,28 +626,28 @@ THSTI_L9496	2006	Asia	India	Kolkata	IND	3		ERR1880834	Weill et al. Science 2017	
 CNRVC060089	2006	Asia	India		IND	3		ERR1878151	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 5174_6_8	2005	Asia	India		IND	3		ERR025374	Mutreja et al. Nature 2011	Published genomes	TRUE	TRUE
 THSTI_L19089	2006	Asia	India	Kolkata	IND	3		ERR1880833	Weill et al. Science 2017	Published genomes	TRUE	TRUE
-KEN-2009-001	2009	Africa	Kenya	Kiambu	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-017	2009	Africa	Kenya	Siaya	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-128	2009	Africa	Kenya	Marsabit	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-061	2009	Africa	Kenya	Kwale	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-101	2009	Africa	Kenya	Kiambu	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-038	2010	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-043	2009	Africa	Kenya	Makueni	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-084	2009	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2011-004	2011	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-043	2010	Africa	Kenya	Kiambu	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-045	2010	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-095	2009	Africa	Kenya	Turkana	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-085	2009	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-177	2018	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-125	2009	Africa	Kenya	Kilifi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-098	2009	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-072	2018	Africa	Tanzania	Kigoma	TZA	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-178	2018	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-013	2010	Africa	Kenya	Makueni	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-055	2010	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-001	2009	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-017	2009	Africa	Kenya	Siaya	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-128	2009	Africa	Kenya	Marsabit	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-061	2009	Africa	Kenya	Kwale	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-101	2009	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-038	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-043	2009	Africa	Kenya	Makueni	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-084	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2011-004	2011	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-043	2010	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-045	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-095	2009	Africa	Kenya	Turkana	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-085	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-177	2018	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-125	2009	Africa	Kenya	Kilifi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-098	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-072	2018	Africa	Tanzania	Kigoma	TZA	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-178	2018	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-013	2010	Africa	Kenya	Makueni	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-055	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
 7346_8_53	2009	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak	ERR114418	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-UGA-2018-006	2018	Africa	Uganda	Hoima	UGA	3	sporadic/local outbreak			Genomes sequenced in this paper	TRUE	TRUE
+UGA-2018-006	2018	Africa	Uganda	Hoima	UGA	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
 0014_L008_R1	2002	Africa	Mozambique		MOZ	3	AFR11	ERS1938051	Garrine et al. PLoS NTD 2017	Published genomes	TRUE	TRUE
 152_L008_R1	2003	Africa	Mozambique		MOZ	3	AFR11	ERS1938085	Garrine et al. PLoS NTD 2017	Published genomes	TRUE	TRUE
 1019828_5_L007_R1	2010	Africa	Mozambique		MOZ	3	AFR11	ERS1938068	Garrine et al. PLoS NTD 2017	Published genomes	TRUE	TRUE

@@ -494,7 +494,9 @@ anno_withnode <- anno_withnode_raw %>%
 # the five countries in Southeast Africa during 2007-2019
 teyear_distribution <- anno_withnode %>% 
                         filter(year >= 2007 & year <= 2019) %>%
-                        filter(te != "sporadic/local outbreak") %>%
+                        filter(te != "sporadic/local outbreak" &
+                               te != "sporadic outbreak/ new lineage 1" &
+                               te != "sporadic outbreak/ new lineage 2") %>%
                         filter(te != "") %>%
                         filter(ISO3 %in% c("ZMB",
                                            "UGA",
@@ -617,7 +619,9 @@ tree_vis <- ggtree(tree_1498,
 ##tree labels formatting
 tree_dt <- data.table(tree_vis$data)
 tree_dt <- tree_dt[isTip == TRUE&te!="" & 
-                   te != "sporadic/local outbreak"][order(y)]
+                   te != "sporadic/local outbreak" &
+                   te != "sporadic outbreak/ new lineage 1" &
+                   te != "sporadic outbreak/ new lineage 2"][order(y)]
 coord_groups <- tree_dt[, .(y1=y[1],
                             y2=y[.N],
                             angle=mean(angle),
@@ -896,7 +900,9 @@ cocirculate_detection <- anno_withnode  %>%
                                              ) & 
                                  continent == "Africa" & 
                                  !stri_isempty(district) &
-                                 te != "sporadic/local outbreak"
+                                 te != "sporadic/local outbreak" &
+                                 te != "sporadic outbreak/ new lineage 1" &
+                                 te != "sporadic outbreak/ new lineage 2"
                                  )
 
 
@@ -956,7 +962,9 @@ KEN_2009_case <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
 # summarise Kenya 2009 te distribution
 KEN_2009_te <- anno_withnode %>%
               filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak"
+                     te != "sporadic/local outbreak" &
+                     te != "sporadic outbreak/ new lineage 1" &
+                     te != "sporadic outbreak/ new lineage 2"
                      ) %>%
               filter(ISO3 == "KEN" & year == 2009)
 
@@ -986,7 +994,9 @@ KEN_2009_case_te <- Reduce(function(x, y) {merge(x, y, by="NAME_1", all.x=T)},
 # summarise te distribution of Kenya neighboring countries
 KEN_2009_neighbor_te <- merge(KEN_neighbors,
                               anno_withnode %>%
-                                filter(te != "sporadic/local outbreak") %>%
+                                filter(te != "sporadic/local outbreak" &
+                                       te != "sporadic outbreak/ new lineage 1" &
+                                       te != "sporadic outbreak/ new lineage 2") %>%
                                 filter(ISO3 %in% KEN_neighbors$ISO3 &
                                        year == 2009) %>% 
                                 group_by(ISO3, te) %>%
@@ -1116,7 +1126,9 @@ KEN_2010_case <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
 # summarise Kenya 2010 te distribution
 KEN_2010_te <- anno_withnode %>%
               filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak"
+                     te != "sporadic/local outbreak" &
+                     te != "sporadic outbreak/ new lineage 1" &
+                     te != "sporadic outbreak/ new lineage 2"
                      ) %>%
               filter(ISO3 == "KEN" & year == 2010)
 
@@ -1146,7 +1158,9 @@ KEN_2010_case_te <- Reduce(function(x, y) {merge(x, y, by="NAME_1", all.x=T)},
 # summarise te distribution of Kenya neighboring countries
 KEN_2010_neighbor_te <- merge(KEN_neighbors,
                               anno_withnode %>%
-                                filter(te != "sporadic/local outbreak") %>%
+                                filter(te != "sporadic/local outbreak" &
+                                       te != "sporadic outbreak/ new lineage 1" &
+                                       te != "sporadic outbreak/ new lineage 2") %>%
                                 filter(ISO3 %in% KEN_neighbors$ISO3 &
                                        year == 2010) %>% 
                                 group_by(ISO3, te) %>%
@@ -1282,7 +1296,9 @@ MWI_2015_case <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
 # summarise Malawi 2015 te distribution
 MWI_2015_te <- anno_withnode %>%
               filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak"
+                     te != "sporadic/local outbreak" &
+                     te != "sporadic outbreak/ new lineage 1" &
+                     te != "sporadic outbreak/ new lineage 2"
                      ) %>%
               filter(ISO3 == "MWI" & year == 2015)
 
@@ -1312,7 +1328,9 @@ MWI_2015_case_te <- Reduce(function(x, y) {merge(x, y, by="NAME_1", all.x=T)},
 # summarise te distribution of Malawi neighboring countries
 MWI_2015_neighbor_te <- merge(MWI_neighbors,
                               anno_withnode %>%
-                                filter(te != "sporadic/local outbreak") %>%
+                                filter(te != "sporadic/local outbreak" &
+                                       te != "sporadic outbreak/ new lineage 1" &
+                                       te != "sporadic outbreak/ new lineage 2") %>%
                                 filter(ISO3 %in% MWI_neighbors$ISO3 &
                                        year == 2015) %>% 
                                 group_by(ISO3, te) %>%
@@ -1449,7 +1467,9 @@ MWI_2016_case <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
 # summarise Malawi 2016 te distribution
 MWI_2016_te <- anno_withnode %>%
               filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak"
+                     te != "sporadic/local outbreak" &
+                     te != "sporadic outbreak/ new lineage 1" &
+                     te != "sporadic outbreak/ new lineage 2"
                      ) %>%
               filter(ISO3 == "MWI" & year == 2016)
 
@@ -1479,7 +1499,9 @@ MWI_2016_case_te <- Reduce(function(x, y) {merge(x, y, by="NAME_1", all.x=T)},
 # summarise te distribution of Malawi neighboring countries
 MWI_2016_neighbor_te <- merge(MWI_neighbors,
                               anno_withnode %>%
-                                filter(te != "sporadic/local outbreak") %>%
+                                filter(te != "sporadic/local outbreak" &
+                                       te != "sporadic outbreak/ new lineage 1" &
+                                       te != "sporadic outbreak/ new lineage 2") %>%
                                 filter(ISO3 %in% MWI_neighbors$ISO3 &
                                        year == 2016) %>% 
                                 group_by(ISO3, te) %>%
