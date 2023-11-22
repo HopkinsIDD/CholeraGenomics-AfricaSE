@@ -532,12 +532,11 @@ teyear_visdata <- merge(teyear_distribution,
                         ISO3_code,
                         by="ISO3",
                         all.x=T) %>%
-                  mutate(x_dodge=case_when(te %in% c("AFR1","AFR5") ~ -0.1,
-                                           te %in% c("AFR8","AFR10") ~ 0,
+                  mutate(x_dodge=case_when(te %in% c("AFR8","AFR10") ~ 0,
                                            te %in% c("AFR11","AFR13") ~ 0.1
                                            ),
-                         y_dodge=case_when(te %in% c("AFR1","AFR8","AFR11") ~ 0.2,
-                                           te %in% c("AFR5","AFR10","AFR13") ~ 0.3
+                         y_dodge=case_when(te %in% c("AFR8","AFR11") ~ 0.2,
+                                           te %in% c("AFR10","AFR13") ~ 0.3
                                            ),
                          y_dodge=ifelse(status == "Published genomes",
                                         y_dodge,
@@ -548,7 +547,7 @@ teyear_visdata <- merge(teyear_distribution,
                          vis_y=vis_id + y_dodge,
                          te=factor(as.numeric(str_replace(te,"AFR","")),
                                    labels=paste("AFR",
-                                                c(1, 5, 8, 10, 11, 13),
+                                                c(8, 10, 11, 13),
                                                 sep = ""
                                                 )
                                    )
