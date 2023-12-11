@@ -7,9 +7,9 @@ output: pdf_document
 
 ```{r setup, include=F}
 
-knitr::opts_chunk$set(root.dir = "../",
+knitr::opts_chunk$set(root.dir = './',
                       fig.width=7.5, fig.height=6, 
-                      fig.path='../figures/', 
+                      fig.path='./figures/', 
                       warning=FALSE, 
                       message=FALSE,
                       cache=FALSE,
@@ -50,28 +50,28 @@ library(viridis)
 
 ```{r downloading maps, echo=F, message=F, warning=F}
 
-if (!dir.exists("../maps")){
-  dir.create("../maps")
+if (!dir.exists("./maps")){
+  dir.create("./maps")
 }
 
 # downloading and loading level 0 country maps
-KEN0 <- gadm(country="KEN", level=0, path="../maps") %>% st_as_sf()
-MWI0 <- gadm(country="MWI", level=0, path="../maps") %>% st_as_sf()
-TZA0 <- gadm(country="TZA", level=0, path="../maps") %>% st_as_sf()
-UGA0 <- gadm(country="UGA", level=0, path="../maps") %>% st_as_sf()
-ZMB0 <- gadm(country="ZMB", level=0, path="../maps") %>% st_as_sf()
-TZA0 <- gadm(country="TZA", level=0, path="../maps") %>% st_as_sf()
-BDI0 <- gadm(country="BDI", level=0, path="../maps") %>% st_as_sf()
-COD0 <- gadm(country="COD", level=0, path="../maps") %>% st_as_sf()
-RWA0 <- gadm(country="RWA", level=0, path="../maps") %>% st_as_sf()
-SSD0 <- gadm(country="SSD", level=0, path="../maps") %>% st_as_sf()
-MOZ0 <- gadm(country="MOZ", level=0, path="../maps") %>% st_as_sf()
-SOM0 <- gadm(country="SOM", level=0, path="../maps") %>% st_as_sf()
-ETH0 <- gadm(country="ETH", level=0, path="../maps") %>% st_as_sf()
-AGO0 <- gadm(country="AGO", level=0, path="../maps") %>% st_as_sf()
-NAM0 <- gadm(country="NAM", level=0, path="../maps") %>% st_as_sf()
-BWA0 <- gadm(country="BWA", level=0, path="../maps") %>% st_as_sf()
-ZWE0 <- gadm(country="ZWE", level=0, path="../maps") %>% st_as_sf()
+KEN0 <- gadm(country="KEN", level=0, path="./maps") %>% st_as_sf()
+MWI0 <- gadm(country="MWI", level=0, path="./maps") %>% st_as_sf()
+TZA0 <- gadm(country="TZA", level=0, path="./maps") %>% st_as_sf()
+UGA0 <- gadm(country="UGA", level=0, path="./maps") %>% st_as_sf()
+ZMB0 <- gadm(country="ZMB", level=0, path="./maps") %>% st_as_sf()
+TZA0 <- gadm(country="TZA", level=0, path="./maps") %>% st_as_sf()
+BDI0 <- gadm(country="BDI", level=0, path="./maps") %>% st_as_sf()
+COD0 <- gadm(country="COD", level=0, path="./maps") %>% st_as_sf()
+RWA0 <- gadm(country="RWA", level=0, path="./maps") %>% st_as_sf()
+SSD0 <- gadm(country="SSD", level=0, path="./maps") %>% st_as_sf()
+MOZ0 <- gadm(country="MOZ", level=0, path="./maps") %>% st_as_sf()
+SOM0 <- gadm(country="SOM", level=0, path="./maps") %>% st_as_sf()
+ETH0 <- gadm(country="ETH", level=0, path="./maps") %>% st_as_sf()
+AGO0 <- gadm(country="AGO", level=0, path="./maps") %>% st_as_sf()
+NAM0 <- gadm(country="NAM", level=0, path="./maps") %>% st_as_sf()
+BWA0 <- gadm(country="BWA", level=0, path="./maps") %>% st_as_sf()
+ZWE0 <- gadm(country="ZWE", level=0, path="./maps") %>% st_as_sf()
 
 
 # combining all level 0 country maps
@@ -81,15 +81,15 @@ all_countries0 <- rbind(KEN0, MWI0, TZA0, UGA0, ZMB0,
                         ZWE0)
 
 # downloading and loading level 1 country maps
-KEN1 <- gadm(country="KEN", level=1, path="../maps") %>% st_as_sf()
-MWI1 <- gadm(country="MWI", level=1, path="../maps") %>% st_as_sf()
-TZA1 <- gadm(country="TZA", level=1, path="../maps") %>% st_as_sf()
-UGA1 <- gadm(country="UGA", level=1, path="../maps") %>% st_as_sf()
-ZMB1 <- gadm(country="ZMB", level=1, path="../maps") %>% st_as_sf()
-BDI1 <- gadm(country="BDI", level=1, path="../maps") %>% st_as_sf()
-COD1 <- gadm(country="COD", level=1, path="../maps") %>% st_as_sf()
-RWA1 <- gadm(country="RWA", level=1, path="../maps") %>% st_as_sf()
-SSD1 <- gadm(country="SSD", level=1, path="../maps") %>% st_as_sf()
+KEN1 <- gadm(country="KEN", level=1, path="./maps") %>% st_as_sf()
+MWI1 <- gadm(country="MWI", level=1, path="./maps") %>% st_as_sf()
+TZA1 <- gadm(country="TZA", level=1, path="./maps") %>% st_as_sf()
+UGA1 <- gadm(country="UGA", level=1, path="./maps") %>% st_as_sf()
+ZMB1 <- gadm(country="ZMB", level=1, path="./maps") %>% st_as_sf()
+BDI1 <- gadm(country="BDI", level=1, path="./maps") %>% st_as_sf()
+COD1 <- gadm(country="COD", level=1, path="./maps") %>% st_as_sf()
+RWA1 <- gadm(country="RWA", level=1, path="./maps") %>% st_as_sf()
+SSD1 <- gadm(country="SSD", level=1, path="./maps") %>% st_as_sf()
 
 
 # combining all level 1 country maps
@@ -97,11 +97,11 @@ all_countries1 <- rbind(KEN1, MWI1, TZA1, UGA1, ZMB1,
                         BDI1, COD1, RWA1, SSD1)
 
 # downloading and loading level 2 country maps
-KEN2 <- gadm(country="KEN", level=2, path="../maps") %>% st_as_sf()
-MWI2 <- gadm(country="MWI", level=2, path="../maps") %>% st_as_sf()
-TZA2 <- gadm(country="TZA", level=2, path="../maps") %>% st_as_sf()
-UGA2 <- gadm(country="UGA", level=2, path="../maps") %>% st_as_sf()
-ZMB2 <- gadm(country="ZMB", level=2, path="../maps") %>% st_as_sf()
+KEN2 <- gadm(country="KEN", level=2, path="./maps") %>% st_as_sf()
+MWI2 <- gadm(country="MWI", level=2, path="./maps") %>% st_as_sf()
+TZA2 <- gadm(country="TZA", level=2, path="./maps") %>% st_as_sf()
+UGA2 <- gadm(country="UGA", level=2, path="./maps") %>% st_as_sf()
+ZMB2 <- gadm(country="ZMB", level=2, path="./maps") %>% st_as_sf()
 
 # combining all level 2 country maps
 all_countries2 <- rbind(KEN2, MWI2, TZA2, UGA2, ZMB2)
@@ -121,12 +121,12 @@ map_link <- "https://files.worldwildlife.org/wwfcmsprod/files/Publication/file/8
 curl::curl_download(map_link,
                     mode="wb",
                     quiet=TRUE,
-                    destfile="../maps/8ark3lcpfw_GLWD_level1.zip")
+                    destfile="./maps/8ark3lcpfw_GLWD_level1.zip")
 
-unzip("../maps/8ark3lcpfw_GLWD_level1.zip",
-      exdir="../maps")
+unzip("./maps/8ark3lcpfw_GLWD_level1.zip",
+      exdir="./maps")
 
-water <- st_read("../maps/glwd_1.shp", quiet=TRUE) %>%
+water <- st_read("./maps/glwd_1.shp", quiet=TRUE) %>%
   st_set_crs(4326) %>%mutate(type="water")
 
 water_continent <- water %>% mutate(CONTINENT=
@@ -145,7 +145,7 @@ water_Africa <- water_continent %>% filter(CONTINENT == "Africa")
 ```{r fig1A, echo=F, message=F, warning=F, fig.height=9, fig.width=9, background="white"}
 
 # read supplemental 1 data
-new_seq <- read.csv("../supp_data/supp_data_1_sample_metadata.csv", 
+new_seq <- read.csv("./supp_data/supp_data_1_sample_metadata.csv", 
                     header=T)
 
 
@@ -200,7 +200,7 @@ print(fig1_panelA)
 ```{r fig1B, echo=F, message=F, warning=F, fig.height=9, fig.width=9, background="white"}
 
 # read supplemental 2 data
-annotation_raw <- read.delim2("../supp_data/supp_data_2_annotation.txt",
+annotation_raw <- read.delim2("./supp_data/supp_data_2_annotation.txt",
                               header=T) 
 
 # filter out published genomes
@@ -237,7 +237,7 @@ seq_num <- rbind(published_genomes,sequenced_new) %>%
             mutate(log_n=log(n + 1,10)) 
 
 # read supplemental 2 data
-case_data <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
+case_data <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
                        sheet="country_level") %>% 
              rename(year=Year) %>%
              mutate(Country=factor(case_when(
@@ -361,7 +361,7 @@ print(fig1_panelB)
 
 # read the mapping data after down-sampling
 subsample_bysample_depth <-
-  read.csv("../supp_data/supp_data_4_subsample_sampletype.csv",
+  read.csv("./supp_data/supp_data_4_subsample_sampletype.csv",
            header= T) 
 
 
@@ -410,7 +410,7 @@ print(fig1_panelC)
 
 # use a 4000 bp sliding window
 subsample_pos_cov_binned <- 
-  read.csv("../supp_data/supp_data_5_subsample_poscov.csv",
+  read.csv("./supp_data/supp_data_5_subsample_poscov.csv",
            header=T) 
 
 ###chromosome split point
@@ -457,7 +457,7 @@ print(fig1_panelD)
 ```{r prepare tree file, echo=F, message=F, warning=F}
 
 # read ML tree
-tree_1498 <- read.tree("../supp_data/supp_data_6_MLtree.treefile")
+tree_1498 <- read.tree("./supp_data/supp_data_6_MLtree.treefile")
 
 # obtain the nodes of the tree
 node <- as_tibble(tree_1498) %>% mutate(label=gsub("'",'',label))
@@ -804,7 +804,7 @@ print(fig3_panelBD)
 ```{r fig3C, echo=F, message=F, warning=F, fig.height=8, fig.width=12, background="white"}
 
 # read T13 tMRCA posterior data 
-T13_tMRCA <- read.table("../supp_data/supp_data_7_tMRCAT13_data.txt",
+T13_tMRCA <- read.table("./supp_data/supp_data_7_tMRCAT13_data.txt",
                         sep="\t",
                         header=T
                         ) %>%
@@ -941,7 +941,7 @@ KEN_neighbors <- data.frame(ISO3=c("UGA",
                                    "SSD")
                             )
 # read Kenya 2009 case data
-KEN_2009_case <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
+KEN_2009_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
                            sheet="KEN") %>%
                   dplyr::select(NAME_1, cases09) %>%
                   rename(case_n=cases09) %>%
@@ -1105,7 +1105,7 @@ print(fig4_panelA)
 ```{r fig4B, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
 
 # read Kenya 2010 case data
-KEN_2010_case <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
+KEN_2010_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
                            sheet="KEN") %>%
                   dplyr::select(NAME_1, cases10) %>%
                   rename(case_n=cases10) %>%
@@ -1275,7 +1275,7 @@ MWI_neighbors <- data.frame(ISO3=c("TZA",
                                    )
                             )
 # read Malawi 2015 case data
-MWI_2015_case <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
+MWI_2015_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
                            sheet="MWI") %>%
                   dplyr::select(NAME_1, cases15) %>%
                   rename(case_n=cases15) %>%
@@ -1446,7 +1446,7 @@ MWI_neighbors <- data.frame(ISO3=c("TZA",
                                    )
                             )
 # read Malawi 2016 case data
-MWI_2016_case <- read_xlsx("../supp_data/supp_data_3_cholera_cases.xlsx",
+MWI_2016_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
                            sheet="MWI") %>%
                   dplyr::select(NAME_1, cases16) %>%
                   rename(case_n=cases16) %>%
@@ -1611,7 +1611,7 @@ print(fig4_panelD)
 ```{r supp_fig1A, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
 vc_1509_rtt <- 
-  read_xlsx("../supp_data/supp_data_8_root_to_tip_data.xlsx",
+  read_xlsx("./supp_data/supp_data_8_root_to_tip_data.xlsx",
              sheet = "full_tree")
 
 
@@ -1651,7 +1651,7 @@ print(suppfig1_panelA)
 
 ```{r supp_fig1B, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
-vc_wave3_rtt <- read_xlsx("../supp_data/supp_data_8_root_to_tip_data.xlsx",
+vc_wave3_rtt <- read_xlsx("./supp_data/supp_data_8_root_to_tip_data.xlsx",
                          sheet="wave3_tree")
 
 
