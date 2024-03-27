@@ -6,12 +6,12 @@ GCA_018398015.1	2017	Africa	Tanzania	Kigoma	TZA	3	AFR10	SAMN19110433		Published 
 GCA_018398235.1	2017	Africa	Tanzania	Pwani	TZA	3	AFR10	SAMN19110435		Published genomes	TRUE	TRUE
 GCA_018916525.1	2017	Africa	Tanzania	Mbeya	TZA	3	AFR10	SAMN19110432		Published genomes	TRUE	TRUE
 ERR3039945	2017	Africa	Tanzania		TZA	3	AFR10	ERS3013702	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
-ZMB-2016-034	2016	Africa	Zambia	Lusaka	ZMB	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2008-006	2008	Africa	Kenya	Bungoma	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2017-003	2017	Africa	Tanzania	Pwani	TZA	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-069	2018	Africa	Tanzania	Kigoma	TZA	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-068	2018	Africa	Tanzania	Kigoma	TZA	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2015-002	2015	Africa	Tanzania	Kusini Unguja	TZA	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+ZMB-2016-034	2016	Africa	Zambia	Lusaka	ZMB	3	AFR10	SAMN40623254		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2008-006	2008	Africa	Kenya	Bungoma	KEN	3	AFR10	SAMN40623150		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2017-003	2017	Africa	Tanzania	Pwani	TZA	3	AFR10	SAMN40623249		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-069	2018	Africa	Tanzania	Kigoma	TZA	3	AFR10	SAMN40623232		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-068	2018	Africa	Tanzania	Kigoma	TZA	3	AFR10	SAMN40623234		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2015-002	2015	Africa	Tanzania	Kusini Unguja	TZA	3	AFR10	SAMN40623243		Genomes sequenced in this paper	TRUE	TRUE
 CTMA_1443	2016	Africa	Democratic Republic of the Congo	Maniema	COD	3	AFR10	ERR3269032	Irenge et al. PLoS NTD 2020	Published genomes	TRUE	TRUE
 CTMA_1444	2016	Africa	Democratic Republic of the Congo	Maniema	COD	3	AFR10	ERR3269033	Irenge et al. PLoS NTD 2020	Published genomes	TRUE	TRUE
 CTMA_1445	2016	Africa	Democratic Republic of the Congo	Sud-Kivu	COD	3	AFR10	ERR3269034	Irenge et al. PLoS NTD 2020	Published genomes	TRUE	TRUE
@@ -72,8 +72,8 @@ CNRVC010061	2001	Africa	Burundi	Bujumbura Rural	BDI	3	AFR10	ERR1877941	Weill et 
 CNRVC010062	2001	Africa	Burundi	Bujumbura Rural	BDI	3	AFR10	ERR1877942	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 IL100064936_S119_L008	2015	Africa	Tanzania		TZA	3	AFR10	ERS2318689	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
 16244_8_23	1998	Africa	Rwanda	Iburengerazuba	RWA	3	AFR10	ERR976569	Weill et al. Science 2017	Published genomes	TRUE	TRUE
-TZA-2017-032	2017	Africa	Tanzania	Kigoma	TZA	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-UGA-2018-009	2018	Africa	Uganda	Kyenjojo	UGA	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2017-032	2017	Africa	Tanzania	Kigoma	TZA	3	AFR10	SAMN40623248		Genomes sequenced in this paper	TRUE	TRUE
+UGA-2018-009	2018	Africa	Uganda	Kyenjojo	UGA	3	AFR10	SAMN40623250		Genomes sequenced in this paper	TRUE	TRUE
 UG054	2015	Africa	Uganda	Hoima	UGA	3	AFR10	SAMN08744335	Bwire et al. PLoS NTD 2018	Published genomes	TRUE	TRUE
 UG042	2015	Africa	Uganda	Kasese	UGA	3	AFR10	SAMN08744333	Bwire et al. PLoS NTD 2018	Published genomes	TRUE	TRUE
 UG046	2015	Africa	Uganda	Kasese	UGA	3	AFR10	SAMN08744334	Bwire et al. PLoS NTD 2018	Published genomes	TRUE	TRUE
@@ -179,17 +179,17 @@ CNRVC030293	2003	Africa	Democratic Republic of the Congo	Kinshasa	COD	3	AFR10	ER
 CNRVC010243_GATCAG_L001	2001	Africa	Democratic Republic of the Congo		COD	3	AFR10	ERR1877951	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 12971_7_48	2001	Africa	Democratic Republic of the Congo	Tanganyika	COD	3	AFR10	ERR572810	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 CDCF5333	1998	Africa	Tanzania		TZA	3	AFR10	ERR1880767	Weill et al. Science 2017	Published genomes	TRUE	TRUE
-KEN-2009-046	2009	Africa	Kenya	Kiambu	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-025	2010	Africa	Kenya	Kwale	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-077	2009	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-046	2009	Africa	Kenya	Kiambu	KEN	3	AFR10	SAMN40623164		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-025	2010	Africa	Kenya	Kwale	KEN	3	AFR10	SAMN40623194		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-077	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	SAMN40623156		Genomes sequenced in this paper	TRUE	TRUE
 7298_7_7	2010	Africa	Kenya	Turkana	KEN	3	AFR10	ERR117573	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-KEN-2009-092	2009	Africa	Kenya	Turkana	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-100	2009	Africa	Kenya	Kiambu	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-092	2009	Africa	Kenya	Turkana	KEN	3	AFR10	SAMN40623197		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-100	2009	Africa	Kenya	Kiambu	KEN	3	AFR10	SAMN40623158		Genomes sequenced in this paper	TRUE	TRUE
 7298_7_22	2010	Africa	Kenya	Kwale	KEN	3	AFR10	ERR117588	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_5	2010	Africa	Kenya	Kwale	KEN	3	AFR10	ERR117571	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 IL100065162_S133_L008	2012	Africa	Tanzania		TZA	3	AFR10	ERS2318703	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
 IL100065163_S134_L008	2011	Africa	Tanzania		TZA	3	AFR10	ERS2318704	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
-KEN-2009-055	2009	Africa	Kenya	Kwale	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-055	2009	Africa	Kenya	Kwale	KEN	3	AFR10	SAMN40623189		Genomes sequenced in this paper	TRUE	TRUE
 7298_7_31	2010	Africa	Kenya	Turkana	KEN	3	AFR10	ERR117597	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 6084_8_18	2010	Africa	Kenya	Kwale	KEN	3	AFR10	ERR037738	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_12	2010	Africa	Kenya	Kilifi	KEN	3	AFR10	ERR117578	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
@@ -240,15 +240,15 @@ CNRVC150212_ATGTCA_L001	1998	Africa	Tanzania	Mara	TZA	3	AFR10	ERR1879386	Weill e
 CNRVC150240_CTAGCT_L001	1998	Africa	Kenya	Turkana	KEN	3	AFR10	ERR1879539	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 CNRVC150243_CTATAC_L001	1998	Africa	Kenya	Garissa	KEN	3	AFR10	ERR1879540	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 CDCF5332	1998	Africa	Tanzania		TZA	3	AFR10	ERR1880766	Weill et al. Science 2017	Published genomes	TRUE	TRUE
-KEN-2007-006	2007	Africa	Kenya	Homa Bay	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2007-005	2007	Africa	Kenya	Homa Bay	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2008-007	2008	Africa	Kenya	Bungoma	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2007-006	2007	Africa	Kenya	Homa Bay	KEN	3	AFR10	SAMN40623175		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2007-005	2007	Africa	Kenya	Homa Bay	KEN	3	AFR10	SAMN40623191		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2008-007	2008	Africa	Kenya	Bungoma	KEN	3	AFR10	SAMN40623151		Genomes sequenced in this paper	TRUE	TRUE
 7298_5_14	2010	Africa	Kenya	Kisumu	KEN	3	AFR10	ERR117484	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_20	2010	Africa	Kenya	West Pokot	KEN	3	AFR10	ERR117586	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_5_20	2010	Africa	Kenya	Kisumu	KEN	3	AFR10	ERR117490	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_5_3	2010	Africa	Kenya	Kisumu	KEN	3	AFR10	ERR117473	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-KEN-2008-002	2008	Africa	Kenya	Bungoma	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-007	2009	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2008-002	2008	Africa	Kenya	Bungoma	KEN	3	AFR10	SAMN40623174		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-007	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	SAMN40623195		Genomes sequenced in this paper	TRUE	TRUE
 7298_7_38	2009	Africa	Kenya	Kiambu	KEN	3	AFR10	ERR117604	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 4370_3_1	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	ERR028066	Mutreja et al. Nature 2011	Published genomes	TRUE	TRUE
 4370_3_7	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	ERR028075	Mutreja et al. Nature 2011	Published genomes	TRUE	TRUE
@@ -259,23 +259,23 @@ KEN-2009-007	2009	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this p
 7298_7_44	2009	Africa	Kenya	Garissa	KEN	3	AFR10	ERR117610	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_46	2009	Africa	Kenya	Garissa	KEN	3	AFR10	ERR117612	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_47	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	ERR117613	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-KEN-2009-135	2009	Africa	Kenya	Marsabit	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2008-005	2008	Africa	Kenya	Bungoma	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-142	2009	Africa	Kenya	Isiolo	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-135	2009	Africa	Kenya	Marsabit	KEN	3	AFR10	SAMN40623187		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2008-005	2008	Africa	Kenya	Bungoma	KEN	3	AFR10	SAMN40623178		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-142	2009	Africa	Kenya	Isiolo	KEN	3	AFR10	SAMN40623202		Genomes sequenced in this paper	TRUE	TRUE
 7298_7_11	2010	Africa	Kenya	West Pokot	KEN	3	AFR10	ERR117577	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7346_8_50	2009	Africa	Kenya	Kisumu	KEN	3	AFR10	ERR114415	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7346_8_51	2009	Africa	Kenya	Kisumu	KEN	3	AFR10	ERR114416	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 CNRVC070066	2007	Africa	South Sudan	Central Equatoria	SSD	3	AFR10	ERR1878553	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 CNRVC070067	2007	Africa	South Sudan	Central Equatoria	SSD	3	AFR10	ERR1878554	Weill et al. Science 2017	Published genomes	TRUE	TRUE
-KEN-2008-001	2008	Africa	Kenya	Mandera	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-015	2009	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2011-003	2011	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-014	2010	Africa	Kenya	West Pokot	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2008-001	2008	Africa	Kenya	Mandera	KEN	3	AFR10	SAMN40623165		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-015	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	SAMN40623203		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2011-003	2011	Africa	Kenya	Nairobi	KEN	3	AFR10	SAMN40623163		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-014	2010	Africa	Kenya	West Pokot	KEN	3	AFR10	SAMN40623206		Genomes sequenced in this paper	TRUE	TRUE
 7298_7_39	2009	Africa	Kenya	West Pokot	KEN	3	AFR10	ERR117605	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-KEN-2009-035	2009	Africa	Kenya	Siaya	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2017-014	2017	Africa	Tanzania	Dar es Salaam	TZA	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-UGA-2018-010	2018	Africa	Uganda	Kyenjojo	UGA	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-134	2009	Africa	Kenya	Kisumu	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-035	2009	Africa	Kenya	Siaya	KEN	3	AFR10	SAMN40623192		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2017-014	2017	Africa	Tanzania	Dar es Salaam	TZA	3	AFR10	SAMN40623246		Genomes sequenced in this paper	TRUE	TRUE
+UGA-2018-010	2018	Africa	Uganda	Kyenjojo	UGA	3	AFR10	SAMN40623253		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-134	2009	Africa	Kenya	Kisumu	KEN	3	AFR10	SAMN40623173		Genomes sequenced in this paper	TRUE	TRUE
 7298_7_43	2009	Africa	Kenya	Kiambu	KEN	3	AFR10	ERR117609	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_6	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	ERR117572	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_24	2010	Africa	Kenya	West Pokot	KEN	3	AFR10	ERR117590	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
@@ -285,11 +285,11 @@ KEN-2009-134	2009	Africa	Kenya	Kisumu	KEN	3	AFR10			Genomes sequenced in this pa
 7298_5_12	2009	Africa	Kenya	Busia	KEN	3	AFR10	ERR117482	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_41	2009	Africa	Kenya	Turkana	KEN	3	AFR10	ERR117607	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
 7298_7_13	2007	Africa	Kenya	Nairobi	KEN	3	AFR10	ERR117579	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-KEN-2009-078	2009	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-073	2009	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-002	2010	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-034	2010	Africa	Kenya	West Pokot	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-087	2009	Africa	Kenya	Nairobi	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-078	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	SAMN40623154		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-073	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	SAMN40623172		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-002	2010	Africa	Kenya	Nairobi	KEN	3	AFR10	SAMN40623166		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-034	2010	Africa	Kenya	West Pokot	KEN	3	AFR10	SAMN40623200		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-087	2009	Africa	Kenya	Nairobi	KEN	3	AFR10	SAMN40623153		Genomes sequenced in this paper	TRUE	TRUE
 CNRVC060120	2006	Africa	Kenya		KEN	3	AFR10	ERR1878154	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 CNRVC070020	2007	Africa	Djibouti		DJI	3	AFR10	ERR1878551	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 CNRVC060119	2006	Africa	Kenya		KEN	3	AFR10	ERR1878153	Weill et al. Science 2017	Published genomes	TRUE	TRUE
@@ -299,7 +299,7 @@ CNRVC060119	2006	Africa	Kenya		KEN	3	AFR10	ERR1878153	Weill et al. Science 2017	
 22204_7_314	2012	Africa	Kenya	Dadaab	KEN	3	AFR10	ERS1572809	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 22204_7_318	2010	Africa	Kenya	Dadaab	KEN	3	AFR10	ERS1572813	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 7298_7_33	2010	Africa	Kenya	Kisumu	KEN	3	AFR10	ERR117599	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-KEN-2010-006	2010	Africa	Kenya	Machakos	KEN	3	AFR10			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-006	2010	Africa	Kenya	Machakos	KEN	3	AFR10	SAMN40623155		Genomes sequenced in this paper	TRUE	TRUE
 4056_8_2	2007	Africa	Djibouti		DJI	3	AFR10	ERR018175	Mutreja et al. Nature 2011	Published genomes	TRUE	TRUE
 4056_8_10	2007	Africa	Djibouti		DJI	3	AFR10	ERR018172	Mutreja et al. Nature 2011	Published genomes	TRUE	TRUE
 CNRVC040299	2004	Africa	Democratic Republic of the Congo		COD	3	AFR10	ERR1878116	Weill et al. Science 2017	Published genomes	TRUE	TRUE
@@ -317,8 +317,8 @@ CNRVC000043	2000	Africa	Uganda	Kampala	UGA	3	AFR10	ERR1877638	Weill et al. Scien
 CNRVC000044_TGACCA_L001	2000	Africa	Uganda	Kampala	UGA	3	AFR10	ERR1877639	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 THSTI_AM305	1997	Asia	India	Kolkata	IND	3		ERR1880801	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 THSTI_D31153	1998	Asia	India	Kolkata	IND	3		ERR1880812	Weill et al. Science 2017	Published genomes	TRUE	TRUE
-KEN-2009-110	2009	Africa	Kenya	Nairobi	KEN	3				Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-136	2009	Africa	Kenya	Marsabit	KEN	3				Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-110	2009	Africa	Kenya	Nairobi	KEN	3		SAMN40623142		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-136	2009	Africa	Kenya	Marsabit	KEN	3		SAMN40623179		Genomes sequenced in this paper	TRUE	TRUE
 ERR3039944	2017	Africa	Tanzania		TZA	3	AFR13	ERS3013701	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
 ERR3039946	2017	Africa	Tanzania		TZA	3	AFR13	ERS3013703	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
 ZMB-2018-006	2018	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861252	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
@@ -328,17 +328,17 @@ ZMB-2017-006	2017	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861251	Mwaba et al. BMC
 ZMB-2018-004	2018	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861253	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
 ZMB-2017-005	2017	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861250	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
 ZMB-2017-003	2017	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861249	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
-MWI-VC-02	2015	Africa	Malawi	Dedza	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-26	2018	Africa	Malawi	Nkhata Bay	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-21	2016	Africa	Malawi	Machinga	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-27	2018	Africa	Malawi	Dowa	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-32	2018	Africa	Malawi	Salima	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-28	2018	Africa	Malawi	Dedza	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-29	2018	Africa	Malawi	Dedza	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-34	2018	Africa	Malawi	Lilongwe	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-31	2018	Africa	Malawi	Dowa	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-35	2018	Africa	Malawi	Lilongwe	MWI	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-024	2018	Africa	Tanzania	Arusha	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-02	2015	Africa	Malawi	Dedza	MWI	3	AFR13	SAMN40623208		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-26	2018	Africa	Malawi	Nkhata Bay	MWI	3	AFR13	SAMN40623220		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-21	2016	Africa	Malawi	Machinga	MWI	3	AFR13	SAMN40623219		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-27	2018	Africa	Malawi	Dowa	MWI	3	AFR13	SAMN40623221		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-32	2018	Africa	Malawi	Salima	MWI	3	AFR13	SAMN40623225		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-28	2018	Africa	Malawi	Dedza	MWI	3	AFR13	SAMN40623222		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-29	2018	Africa	Malawi	Dedza	MWI	3	AFR13	SAMN40623223		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-34	2018	Africa	Malawi	Lilongwe	MWI	3	AFR13	SAMN40623226		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-31	2018	Africa	Malawi	Dowa	MWI	3	AFR13	SAMN40623224		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-35	2018	Africa	Malawi	Lilongwe	MWI	3	AFR13	SAMN40623227		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-024	2018	Africa	Tanzania	Arusha	TZA	3	AFR13	SAMN40623233		Genomes sequenced in this paper	TRUE	TRUE
 ERR3039948	2017	Africa	Tanzania		TZA	3	AFR13	ERS3013705	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
 ERR3039951	2017	Africa	Tanzania	Dar es Salaam	TZA	3	AFR13	ERS3013708	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039952	2015	Africa	Tanzania	Kigoma	TZA	3	AFR13	ERS3013709	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
@@ -347,7 +347,7 @@ ERR3039960	2017	Africa	Tanzania	Ruvuma	TZA	3	AFR13	ERS3013717	Hounmanou et al. P
 ERR3077566	2017	Africa	Tanzania		TZA	3	AFR13	ERS3035915 	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
 ERR3077564	2017	Africa	Tanzania		TZA	3	AFR13	ERS3035913	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
 ERR3039956	2016	Africa	Tanzania	Morogoro	TZA	3	AFR13	ERS3013713	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
-KEN-2009-143	2009	Africa	Kenya	Isiolo	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-143	2009	Africa	Kenya	Isiolo	KEN	3	AFR13	SAMN40623188		Genomes sequenced in this paper	TRUE	TRUE
 ERR3039957	2016	Africa	Tanzania	Morogoro	TZA	3	AFR13	ERS3013714	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039964	2015	Africa	Tanzania	Tanga	TZA	3	AFR13	ERS3013721	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039954	2017	Africa	Tanzania	Mbeya	TZA	3	AFR13	ERS3013711	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
@@ -367,25 +367,25 @@ GCA_018398135.1	2017	Africa	Tanzania	Mbeya	TZA	3	AFR13	SAMN19110430		Published g
 GCA_018916585.1	2016	Africa	Tanzania	Arusha	TZA	3	AFR13	SAMN19110440		Published genomes	TRUE	TRUE
 GCA_018916555.1	2017	Africa	Tanzania	Mbeya	TZA	3	AFR13	SAMN19110427		Published genomes	TRUE	TRUE
 ERR3039949	2017	Africa	Tanzania		TZA	3	AFR13	ERS3013706	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
-KEN-2009-147	2009	Africa	Kenya	Kilifi	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-041	2018	Africa	Tanzania	Arusha	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-147	2009	Africa	Kenya	Kilifi	KEN	3	AFR13	SAMN40623160		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-041	2018	Africa	Tanzania	Arusha	TZA	3	AFR13	SAMN40623229		Genomes sequenced in this paper	TRUE	TRUE
 ERR3039950	2017	Africa	Tanzania	Dar es Salaam	TZA	3	AFR13	ERS3013707	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039966	2016	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	ERS3013723	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039970	2017	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	ERS3013727	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039969	2017	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	ERS3013726	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 GCA_018916575.1	2017	Africa	Tanzania	Dar es Salaam	TZA	3	AFR13	SAMN19110429		Published genomes	TRUE	TRUE
-KEN-2010-016	2010	Africa	Kenya	West Pokot	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-016	2010	Africa	Kenya	West Pokot	KEN	3	AFR13	SAMN40623177		Genomes sequenced in this paper	TRUE	TRUE
 ERR3039959	2016	Africa	Tanzania	Mwanza	TZA	3	AFR13	ERS3013716	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039967	2016	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	ERS3013724	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039968	2016	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	ERS3013725	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
-KEN-2010-017	2010	Africa	Kenya	West Pokot	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2013-001	2013	Africa	Kenya	Nairobi	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-017	2010	Africa	Kenya	West Pokot	KEN	3	AFR13	SAMN40623167		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2013-001	2013	Africa	Kenya	Nairobi	KEN	3	AFR13	SAMN40623161		Genomes sequenced in this paper	TRUE	TRUE
 Zm_7	2016	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861266	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
-KEN-2018-082	2018	Africa	Kenya		KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2018-091	2018	Africa	Kenya		KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2018-087	2018	Africa	Kenya		KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2018-082	2018	Africa	Kenya		KEN	3	AFR13	SAMN40623147		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2018-091	2018	Africa	Kenya		KEN	3	AFR13	SAMN40623146		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2018-087	2018	Africa	Kenya		KEN	3	AFR13	SAMN40623144		Genomes sequenced in this paper	TRUE	TRUE
 ERR3039953	2015	Africa	Tanzania	Kigoma	TZA	3	AFR13	ERS3013710	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
-KEN-2011-001	2011	Africa	Kenya	Makueni	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2011-001	2011	Africa	Kenya	Makueni	KEN	3	AFR13	SAMN40623168		Genomes sequenced in this paper	TRUE	TRUE
 IL100064932_S115_L008	2015	Africa	Tanzania		TZA	3	AFR13	ERS2318685	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
 IL100064947_S130_L008	2015	Africa	Tanzania		TZA	3	AFR13	ERS2318700	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
 IL100064940_S123_L008	2015	Africa	Tanzania		TZA	3	AFR13	ERS2318693	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
@@ -394,31 +394,31 @@ ERR3039963	2017	Africa	Tanzania	Songwe	TZA	3	AFR13	ERS3013720	Hounmanou et al. P
 ERR3039971	2017	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	ERS3013728	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 IL100064929_S45_L002	2015	Africa	Tanzania		TZA	3	AFR13	ERS2318682	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
 IL100064944_S127_L008	2015	Africa	Tanzania		TZA	3	AFR13	ERS2318697	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
-KEN-2007-008	2007	Africa	Kenya	West Pokot	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-013	2009	Africa	Kenya	West Pokot	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2007-008	2007	Africa	Kenya	West Pokot	KEN	3	AFR13	SAMN40623176		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-013	2009	Africa	Kenya	West Pokot	KEN	3	AFR13	SAMN40623159		Genomes sequenced in this paper	TRUE	TRUE
 Zm44	2016	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861256	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
 Zm_50	2016	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861258	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
 Zm_4	2016	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861255	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
 Zm_6	2016	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861264	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
 Zm_48	2016	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861257	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
 Zm_52	2016	Africa	Zambia	Lusaka	ZMB	3	AFR13	SAMN17861259	Mwaba et al. BMC Infect Dis 2021	Published genomes	TRUE	TRUE
-TZA-2018-181	2018	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-181	2018	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	SAMN40623242		Genomes sequenced in this paper	TRUE	TRUE
 IL100064927_S43_L002	2015	Africa	Tanzania		TZA	3	AFR13	ERS2318680	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
 IL100064928_S44_L002	2015	Africa	Tanzania		TZA	3	AFR13	ERS2318681	Kachwamba et al. BMC Infect Dis 2017	Published genomes	TRUE	TRUE
-KEN-2007-002	2007	Africa	Kenya	Homa Bay	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2019-061	2019	Africa	Kenya		KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2019-064	2019	Africa	Kenya		KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-UGA-2018-026	2018	Africa	Uganda	Kampala	UGA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-027	2018	Africa	Tanzania	Arusha	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-038	2018	Africa	Tanzania	Arusha	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2016-010	2016	Africa	Tanzania	Dar es Salaam	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-179	2018	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2017-009	2017	Africa	Tanzania	Dar es Salaam	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2011-002	2011	Africa	Kenya	Nairobi	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-103	2009	Africa	Kenya	Turkana	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-066	2018	Africa	Tanzania	Arusha	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2015-001	2015	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-026	2018	Africa	Tanzania	Arusha	TZA	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2007-002	2007	Africa	Kenya	Homa Bay	KEN	3	AFR13	SAMN40623148		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2019-061	2019	Africa	Kenya		KEN	3	AFR13	SAMN40623149		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2019-064	2019	Africa	Kenya		KEN	3	AFR13	SAMN40623145		Genomes sequenced in this paper	TRUE	TRUE
+UGA-2018-026	2018	Africa	Uganda	Kampala	UGA	3	AFR13	SAMN40623251		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-027	2018	Africa	Tanzania	Arusha	TZA	3	AFR13	SAMN40623237		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-038	2018	Africa	Tanzania	Arusha	TZA	3	AFR13	SAMN40623238		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2016-010	2016	Africa	Tanzania	Dar es Salaam	TZA	3	AFR13	SAMN40623228		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-179	2018	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	SAMN40623241		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2017-009	2017	Africa	Tanzania	Dar es Salaam	TZA	3	AFR13	SAMN40623247		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2011-002	2011	Africa	Kenya	Nairobi	KEN	3	AFR13	SAMN40623190		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-103	2009	Africa	Kenya	Turkana	KEN	3	AFR13	SAMN40623169		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-066	2018	Africa	Tanzania	Arusha	TZA	3	AFR13	SAMN40623235		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2015-001	2015	Africa	Tanzania	Kusini Unguja	TZA	3	AFR13	SAMN40623244		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-026	2018	Africa	Tanzania	Arusha	TZA	3	AFR13	SAMN40623236		Genomes sequenced in this paper	TRUE	TRUE
 CNRVC170168	2016	Asia	Yemen	Sawan (Sana'a City)	YEM	3	AFR13	ERR2265674	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 CNRVC170176	2016	Asia	Yemen	Al-Mashana (Ibb City)	YEM	3	AFR13	ERR2269614	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 CNRVC170169	2016	Asia	Yemen	Al-Mashana (Ibb City)	YEM	3	AFR13	ERR2265675	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
@@ -463,11 +463,11 @@ CNRVC170206	2017	Asia	Yemen	Sana'a Al-Qadema (Sana'a City)	YEM	3	AFR13	ERR226980
 CNRVC170207	2017	Asia	Yemen	Maeen (Sana'a City)	YEM	3	AFR13	ERR2269810	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 22204_7_288	2015	Africa	Kenya	Nairobi	KEN	3	AFR13	ERS1572783	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 22204_7_289	2015	Africa	Kenya	Nairobi	KEN	3	AFR13	ERS1572784	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
-KEN-2015-031	2015	Africa	Kenya	Kiambu	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2015-031	2015	Africa	Kenya	Kiambu	KEN	3	AFR13	SAMN40623186		Genomes sequenced in this paper	TRUE	TRUE
 22204_7_290	2015	Africa	Kenya	Nairobi	KEN	3	AFR13	ERS1572785	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 22204_7_298	2015	Africa	Kenya	Nairobi	KEN	3	AFR13	ERS1572793	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 22204_7_320	2016	Africa	Kenya	Nairobi	KEN	3	AFR13	ERS1572815	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
-KEN-2015-033	2015	Africa	Kenya	Kiambu	KEN	3	AFR13			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2015-033	2015	Africa	Kenya	Kiambu	KEN	3	AFR13	SAMN40623180		Genomes sequenced in this paper	TRUE	TRUE
 UG010	2016	Africa	Uganda	Mbale	UGA	3	AFR13	SAMN08744330	Bwire et al. PLoS NTD 2018	Published genomes	TRUE	TRUE
 UG020	2016	Africa	Uganda	Mbale	UGA	3	AFR13	SAMN08744331	Bwire et al. PLoS NTD 2018	Published genomes	TRUE	TRUE
 UG026	2015	Africa	Uganda	Kasese	UGA	3	AFR13	SAMN08744332	Bwire et al. PLoS NTD 2018	Published genomes	TRUE	TRUE
@@ -512,10 +512,10 @@ THSTI_23835	2010	Asia	India	Delhi	IND	3		ERR2269922	Weill et al. Nature 2019	Pub
 CNRVC100278	2010	America	Haiti		HTI	3		ERR1878592	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 THSTI_26866	2011	Asia	India	Delhi	IND	3		ERR2269923	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 THSTI_26871	2011	Asia	India	Delhi	IND	3		ERR2269924	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
-KEN-2009-097	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 1			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2015-005	2015	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 1			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-097	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 1	SAMN40623143		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2015-005	2015	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 1	SAMN40623245		Genomes sequenced in this paper	TRUE	TRUE
 7298_7_34	2009	Africa	Kenya	Kilifi	KEN	3	sporadic/local outbreak	ERR117600	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-TZA-2018-052	2018	Africa	Tanzania	Arusha	TZA	3	sporadic outbreak/ new lineage 1			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-052	2018	Africa	Tanzania	Arusha	TZA	3	sporadic outbreak/ new lineage 1	SAMN40623230		Genomes sequenced in this paper	TRUE	TRUE
 ERR351205	2009	Asia	India	Chandigarh	IND	3		ERR351205	Abd El Ghany et al. PLoS NTD 2014	Published genomes	TRUE	TRUE
 12971_4_67	2010	Africa	Togo		TGO	3	AFR12	ERR572580	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 12971_4_77	2012	Africa	Togo		TGO	3	AFR12	ERR572590	Weill et al. Science 2017	Published genomes	TRUE	TRUE
@@ -624,28 +624,28 @@ THSTI_L19089	2006	Asia	India	Kolkata	IND	3		ERR1880833	Weill et al. Science 2017
 CNRVC060089	2006	Asia	India		IND	3		ERR1878151	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 THSTI_K9398	2005	Asia	India	Kolkata	IND	3		ERR1880832	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 THSTI_L9496	2006	Asia	India	Kolkata	IND	3		ERR1880834	Weill et al. Science 2017	Published genomes	TRUE	TRUE
-KEN-2009-001	2009	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-128	2009	Africa	Kenya	Marsabit	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-017	2009	Africa	Kenya	Siaya	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-043	2009	Africa	Kenya	Makueni	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-095	2009	Africa	Kenya	Turkana	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-055	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-001	2009	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623193		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-128	2009	Africa	Kenya	Marsabit	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623170		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-017	2009	Africa	Kenya	Siaya	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623181		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-043	2009	Africa	Kenya	Makueni	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623182		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-095	2009	Africa	Kenya	Turkana	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623171		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-055	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623207		Genomes sequenced in this paper	TRUE	TRUE
 7346_8_53	2009	Africa	Kenya	Nairobi	KEN	3	sporadic/local outbreak	ERR114418	Kiiru et al. PLoS One 2013	Published genomes	TRUE	TRUE
-TZA-2018-072	2018	Africa	Tanzania	Kigoma	TZA	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-178	2018	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-125	2009	Africa	Kenya	Kilifi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-013	2010	Africa	Kenya	Makueni	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-098	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-061	2009	Africa	Kenya	Kwale	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-101	2009	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-038	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-084	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2011-004	2011	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-043	2010	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2010-045	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-KEN-2009-085	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-TZA-2018-177	2018	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
-UGA-2018-006	2018	Africa	Uganda	Hoima	UGA	3	sporadic outbreak/ new lineage 2			Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-072	2018	Africa	Tanzania	Kigoma	TZA	3	sporadic outbreak/ new lineage 2	SAMN40623231		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-178	2018	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 2	SAMN40623240		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-125	2009	Africa	Kenya	Kilifi	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623198		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-013	2010	Africa	Kenya	Makueni	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623183		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-098	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623204		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-061	2009	Africa	Kenya	Kwale	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623184		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-101	2009	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623157		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-038	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623199		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-084	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623185		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2011-004	2011	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623162		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-043	2010	Africa	Kenya	Kiambu	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623196		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2010-045	2010	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623205		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2009-085	2009	Africa	Kenya	Nairobi	KEN	3	sporadic outbreak/ new lineage 2	SAMN40623152		Genomes sequenced in this paper	TRUE	TRUE
+TZA-2018-177	2018	Africa	Tanzania	Kusini Unguja	TZA	3	sporadic outbreak/ new lineage 2	SAMN40623239		Genomes sequenced in this paper	TRUE	TRUE
+UGA-2018-006	2018	Africa	Uganda	Hoima	UGA	3	sporadic outbreak/ new lineage 2	SAMN40623252		Genomes sequenced in this paper	TRUE	TRUE
 0014_L008_R1	2002	Africa	Mozambique		MOZ	3	AFR11	ERS1938051	Garrine et al. PLoS NTD 2017	Published genomes	TRUE	TRUE
 152_L008_R1	2003	Africa	Mozambique		MOZ	3	AFR11	ERS1938085	Garrine et al. PLoS NTD 2017	Published genomes	TRUE	TRUE
 121_L008_R1	2003	Africa	Mozambique		MOZ	3	AFR11	ERS1938079	Garrine et al. PLoS NTD 2017	Published genomes	TRUE	TRUE
@@ -657,15 +657,15 @@ UGA-2018-006	2018	Africa	Uganda	Hoima	UGA	3	sporadic outbreak/ new lineage 2			G
 2011EL_1137	2009	Africa	Republic of South Africa		ZAF	3	AFR11	SRR774784	Katz et al. Mbio 2013	Published genomes	TRUE	TRUE
 6437_7_21	2009	Africa	Zimbabwe		ZWE	3	AFR11	ERR044798	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 SRR227311	2009	Africa	Zimbabwe		ZWE	3	AFR11	SRR227311	Katz et al. Mbio 2013	Published genomes	TRUE	TRUE
-MWI-VC-08	2015	Africa	Malawi	Lilongwe	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-19	2016	Africa	Malawi	Salima	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-17	2016	Africa	Malawi	Karonga	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-12	2017	Africa	Malawi	Karonga	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-10	2015	Africa	Malawi	Ntcheu	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-20	2016	Africa	Malawi	Salima	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-14	2016	Africa	Malawi	Nsanje	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-15	2016	Africa	Malawi	Nsanje	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
-MWI-VC-11	2017	Africa	Malawi	Karonga	MWI	3	AFR11			Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-08	2015	Africa	Malawi	Lilongwe	MWI	3	AFR11	SAMN40623210		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-19	2016	Africa	Malawi	Salima	MWI	3	AFR11	SAMN40623217		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-17	2016	Africa	Malawi	Karonga	MWI	3	AFR11	SAMN40623216		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-12	2017	Africa	Malawi	Karonga	MWI	3	AFR11	SAMN40623213		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-10	2015	Africa	Malawi	Ntcheu	MWI	3	AFR11	SAMN40623211		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-20	2016	Africa	Malawi	Salima	MWI	3	AFR11	SAMN40623218		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-14	2016	Africa	Malawi	Nsanje	MWI	3	AFR11	SAMN40623214		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-15	2016	Africa	Malawi	Nsanje	MWI	3	AFR11	SAMN40623215		Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-11	2017	Africa	Malawi	Karonga	MWI	3	AFR11	SAMN40623212		Genomes sequenced in this paper	TRUE	TRUE
 6714_5_11	2010	Asia	Pakistan	Dera Ismail Khan	PAK	3		ERR051755	Shah et al. EID 2015	Published genomes	TRUE	TRUE
 6714_5_7	2010	Asia	Pakistan	Dera Ismail Khan	PAK	3		ERR051751	Shah et al. EID 2015	Published genomes	TRUE	TRUE
 6714_5_2	2010	Asia	Pakistan	Dera Ismail Khan	PAK	3		ERR051746	Shah et al. EID 2015	Published genomes	TRUE	TRUE
@@ -701,7 +701,7 @@ CNRVC090123	2009	Asia	Pakistan		PAK	3		ERR1878575	Weill et al. Science 2017	Publ
 CNRVC090143	2009	Asia	Pakistan		PAK	3		ERR1878576	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 6714_6_6	2010	Asia	Pakistan	Peshawar	PAK	3		ERR051773	Shah et al. EID 2015	Published genomes	TRUE	TRUE
 CNRVC050280	2005	Asia	Pakistan		PAK	3		ERR1878135	Weill et al. Science 2017	Published genomes	TRUE	TRUE
-MWI-VC-07	2015	Africa	Malawi	Lilongwe	MWI	3				Genomes sequenced in this paper	TRUE	TRUE
+MWI-VC-07	2015	Africa	Malawi	Lilongwe	MWI	3		SAMN40623209		Genomes sequenced in this paper	TRUE	TRUE
 THSTI_VC4	1992	Asia	India	Kolkata	IND	3		ERR1880843	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 ERR579089	2005	Asia	China		CHN	3		ERR579089	Didelot et al. PLoS Genetics 2015	Published genomes	TRUE	TRUE
 ERR579090	2008	Asia	China		CHN	3		ERR579090	Didelot et al. PLoS Genetics 2015	Published genomes	TRUE	TRUE
@@ -712,8 +712,8 @@ CNRVC160014_GCGCTA_L001	2007	Asia	Iraq		IRQ	3		ERR2265663	Weill et al. Nature 20
 CNRVC160016_TACAGC_L001	2007	Asia	Iraq		IRQ	3		ERR2265664	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 CNRVC160018_TCATTC_L001	2007	Asia	Iraq		IRQ	3		ERR2265666	Weill et al. Nature 2019	Published genomes	TRUE	TRUE
 2956_6_4	1999	Asia	Bangladesh		BGD	3		ERR018114	Mutreja et al. Nature 2011	Published genomes	TRUE	TRUE
-KEN-2018-088	2018	Africa	Kenya		KEN	3				Genomes sequenced in this paper	TRUE	TRUE
-KEN-2019-008	2019	Africa	Kenya		KEN	3				Genomes sequenced in this paper	TRUE	TRUE
+KEN-2018-088	2018	Africa	Kenya		KEN	3		SAMN40623201		Genomes sequenced in this paper	TRUE	TRUE
+KEN-2019-008	2019	Africa	Kenya		KEN	3		SAMN40623141		Genomes sequenced in this paper	TRUE	TRUE
 CIRS101	2002	Asia	Bangladesh		BGD	3		ACVW00000000	Chun et al. PNAS 2009	Published genomes	TRUE	TRUE
 2956_6_5	2001	Asia	Bangladesh		BGD	3		ERR018115	Mutreja et al. Nature 2011	Published genomes	TRUE	TRUE
 4056_8_9	2007	Asia	Bangladesh		BGD	3		ERR018182	Mutreja et al. Nature 2011	Published genomes	TRUE	TRUE

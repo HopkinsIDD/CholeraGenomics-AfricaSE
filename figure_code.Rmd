@@ -201,7 +201,9 @@ print(fig1_panelA)
 
 # read supplemental 2 data
 annotation_raw <- read.delim2("./supp_data/supp_data_2_annotation.txt",
-                              header=T) 
+                              header=T) %>% 
+                    mutate(year = as.numeric(year)) %>%
+                    filter(!is.na(year))
 
 # filter out published genomes
 published_genomes <- annotation_raw %>% 
@@ -213,8 +215,9 @@ published_genomes <- annotation_raw %>%
             dplyr::select(taxa, year, ISO3, category)
 
 # new sequences in the study
-sequenced_new <- new_seq %>% mutate(category=2) %>%
-            rename(year=Year) %>%
+sequenced_new <- new_seq %>% filter(Year != "unknown") %>%
+            mutate(year = as.numeric(Year)) %>%
+            mutate(category=2)%>%
             dplyr::select(taxa,year,ISO3,category)
 
 # create sequence number dataset
@@ -234,7 +237,12 @@ seq_num <- rbind(published_genomes,sequenced_new) %>%
                    ) %>%
             group_by(Country, year, category) %>%
             summarise(n=n()) %>% ungroup() %>%
-            mutate(log_n=log(n + 1,10)) 
+            mutate(log_n=log(n + 1,10)) %>% 
+            mutate(category=factor(category,labels = 
+                                  c("Total number of genomes", 
+                                    "Genomes sequenced in this paper"
+                                    )
+                                ))
 
 # read supplemental 2 data
 case_data <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
@@ -311,13 +319,7 @@ fig1_panelB <- ggplot() + geom_point(data=case_data_pad,
                                          size=Num_case
                                          ),
                                      shape = 1) +
-  geom_bar(data=seq_num %>% 
-         mutate(category=factor(category,labels = 
-                                  c("Total number of genomes", 
-                                    "Genomes sequenced in this paper"
-                                    )
-                                )
-                ), 
+  geom_bar(data=seq_num, 
             aes(x=year,
                 y=n,
                 fill=category
@@ -379,10 +381,10 @@ fig1_panelC <- subsample_bysample_depth %>%
                                       "Isolate\nQiagen extraction"
                                       )
                            ),
-         include_MLtree=factor(as.numeric(include),labels=c("No","Yes"))
+         include_ML=factor(as.numeric(include),labels=c("No","Yes"))
          ) %>%
   ggplot() +
-  geom_jitter(aes(x=SampleType, y=median_depth, shape=include_MLtree),
+  geom_jitter(aes(x=SampleType, y=median_depth, shape=include_ML),
               width=0.25, color='black') + 
   geom_boxplot(aes(x=SampleType, y=median_depth),
                width=0.5, outlier.shape=NA, fill="transparent") +
