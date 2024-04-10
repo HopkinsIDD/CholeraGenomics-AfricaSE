@@ -344,7 +344,7 @@ ERR3039951	2017	Africa	Tanzania	Dar es Salaam	TZA	3	AFR13	ERS3013708	Hounmanou e
 ERR3039952	2015	Africa	Tanzania	Kigoma	TZA	3	AFR13	ERS3013709	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039955	2017	Africa	Tanzania	Mbeya	TZA	3	AFR13	ERS3013712	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 ERR3039960	2017	Africa	Tanzania	Ruvuma	TZA	3	AFR13	ERS3013717	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
-ERR3077566	2017	Africa	Tanzania		TZA	3	AFR13	ERS3035915†	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
+ERR3077566	2017	Africa	Tanzania		TZA	3	AFR13	ERS3035915?	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
 ERR3077564	2017	Africa	Tanzania		TZA	3	AFR13	ERS3035913	Hounmanou et al. Front. microbiol 2019	Published genomes	TRUE	TRUE
 ERR3039956	2016	Africa	Tanzania	Morogoro	TZA	3	AFR13	ERS3013713	Hounmanou et al. PLoS NTD 2019	Published genomes	TRUE	TRUE
 KEN-2009-143	2009	Africa	Kenya	Isiolo	KEN	3	AFR13	SAMN40623188		Genomes sequenced in this paper	TRUE	TRUE
@@ -524,13 +524,13 @@ ERR351205	2009	Asia	India	Chandigarh	IND	3		ERR351205	Abd El Ghany et al. PLoS N
 12971_4_76	2011	Africa	Togo		TGO	3	AFR12	ERR572589	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 12971_7_80	2012	Africa	Togo		TGO	3	AFR12	ERR572842	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 NER_028_2011	2011	Africa	Niger	Maradi	NER	3	AFR12	SRS7416470	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
-NER_205_2011	2011	Africa	Niger	Tillabéry	NER	3	AFR12	SRS7416477	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
-NER_071_2011	2011	Africa	Niger	Tillabéry	NER	3	AFR12	SRS7416472	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
+NER_205_2011	2011	Africa	Niger	Tillab?ry	NER	3	AFR12	SRS7416477	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
+NER_071_2011	2011	Africa	Niger	Tillab?ry	NER	3	AFR12	SRS7416472	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
 NER_088_2011	2011	Africa	Niger	Maradi	NER	3	AFR12	SRS7416473	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
-NER_109_2011	2011	Africa	Niger	Tillabéry	NER	3	AFR12	SRS7416474	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
+NER_109_2011	2011	Africa	Niger	Tillab?ry	NER	3	AFR12	SRS7416474	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
 NER_055_2011	2011	Africa	Niger	Niamey	NER	3	AFR12	SRS7416471	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
-NER_132_2012	2012	Africa	Niger	Tillabéry	NER	3	AFR12	SRS7416476	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
-NER_116_2011	2011	Africa	Niger	Tillabéry	NER	3	AFR12	SRS7416475	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
+NER_132_2012	2012	Africa	Niger	Tillab?ry	NER	3	AFR12	SRS7416476	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
+NER_116_2011	2011	Africa	Niger	Tillab?ry	NER	3	AFR12	SRS7416475	Ekeng et al. eLife 2021	Published genomes	TRUE	TRUE
 16853_4_59	2014	Africa	Ghana		GHA	3	AFR12	ERR1024521	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 16853_4_64	2014	Africa	Ghana		GHA	3	AFR12	ERR1024526	Weill et al. Science 2017	Published genomes	TRUE	TRUE
 16853_4_62	2014	Africa	Ghana		GHA	3	AFR12	ERR1024524	Weill et al. Science 2017	Published genomes	TRUE	TRUE
@@ -1494,10 +1494,6 @@ ERR579060	1961	Asia	China		CHN	1		ERR579060	Didelot et al. PLoS Genetics 2015	Pu
 5174_7_5	1957	Asia	Indonesia		IDN	1		ERR025382	Mutreja et al. Nature 2011	Published genomes	TRUE	FALSE
 ERR576982	1961	Asia	Indonesia		IDN	1		ERR576982	Didelot et al. PLoS Genetics 2015	Published genomes	TRUE	FALSE
 5174_7_3	1973					1		ERR025380	Mutreja et al. Nature 2011	Published genomes	FALSE	FALSE
-KEN-2015-044	2015	Africa	Kenya	Kiambu	KEN	1				Genomes sequenced in this paper	FALSE	FALSE
-KEN-2015-037	2015	Africa	Kenya	Kiambu	KEN	1				Genomes sequenced in this paper	FALSE	FALSE
-KEN-2015-036	2015	Africa	Kenya	Kiambu	KEN	1				Genomes sequenced in this paper	FALSE	FALSE
-KEN-2015-035	2015	Africa	Kenya	Kiambu	KEN	1				Genomes sequenced in this paper	FALSE	FALSE
 CDCF3397	1996	Africa				1	AFR5	ERR1879653	Weill et al. Science 2017	Published genomes	FALSE	FALSE
 ERR3039962	2017	Africa	Tanzania	Songwe	TZA	3	AFR13	ERS3013719	Hounmanou et al. PLoS NTD 2019	Published genomes	FALSE	FALSE
 ERR576970	1990	Asia	Thailand		THA	1		ERR576970	Didelot et al. PLoS Genetics 2015	Published genomes	FALSE	FALSE
