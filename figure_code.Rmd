@@ -320,14 +320,20 @@ fig1_panelB <- ggplot() + geom_point(data=case_data_pad,
   geom_bar(data=seq_num, 
             aes(x=year,
                 y=n,
-                fill=category
+                fill=Country,
+                alpha=category
                 ),
             stat="identity",
-            position="stack",
-            alpha=0.6, width=1) + 
-  scale_fill_manual(name="WGS",
-                    values=c("#33638DFF","#481567FF")
-                    )  + 
+            position="stack", width=1) + 
+  scale_fill_manual(name="Country",
+                    values=c("Uganda"="#76CCAE",
+                             "Kenya"="#BE91C2",
+                             "Tanzania"="#F5D58D",
+                             "Malawi"="#F6998E",
+                             "Zambia"="#C0D9E9")
+                    )  +
+  scale_alpha_manual(name="Category",
+                     values=c(0.5,1)) +
   scale_size_manual(name="Cholera cases reported to WHO",
                     values=c(0,1,2,4)
                     ) +
@@ -569,12 +575,10 @@ fig2 <- teyear_visdata %>%
                                        labels=2007:2019
                                        ) +
                     scale_color_manual(name="",
-                                       values=c("#E69F00",
-                                                "#CC79A7",
-                                                "#56B4E9",
-                                                "#009E73",
-                                                "#0072B2",
-                                                "#F0E442")
+                                       values=c("#F15B20",
+                                                "#FFD915",
+                                                "#0F9543",
+                                                "#00A3EE")
                                        ) + 
                     scale_size_manual(name="",
                                       values=c(4, 2)
@@ -693,8 +697,12 @@ fig3_panelA <- ggtree(tree_1488,
               shape=16
               ) +
   scale_color_manual(name="",
-                     values=c(country_code, 
-                              "Other"="gray90")
+                     values=c("UGA"="#528F78",
+                              "KEN"="#A46AA9",
+                              "TZA"="#F4C567",
+                              "MWI"="#F47468",
+                              "ZMB"="#3754A2", 
+                              "Other"="white")
                      ) +
   theme(legend.position="none") + 
   # Add line segments for each group.
@@ -850,7 +858,9 @@ anno_withnode_zoom <- anno_withnode %>%
         mutate(ISO3_zoom=ifelse(status == "Genomes sequenced in this paper",
                                 paste(ISO3,"|",year,sep = ""),
                                 ISO3
-                                )
+                                ),
+               ISO3_fig = ifelse(status == "Genomes sequenced in this paper",
+                            ISO3, "Other")
                )
 
 
@@ -865,19 +875,17 @@ fig3_panelBD <- ggtree(tree_1488,
                  offset=-50
                  ) +
   geom_nodelab(size=0.8) +
-  geom_tippoint(aes(color = factor(case_when(year < 2007 ~ "<2007",
-                                             year == 2007 ~ "2007",
-                                             year == 2008 ~ "2008",
-                                             year == 2009 ~ "2009",
-                                             year == 2010 ~ "2010",
-                                             year == 2011 ~ "2011",
-                                             year == 2012 ~ "2012",
-                                             year == 2013 ~ "2013",
-                                             year == 2014 ~ "2014",
-                                             year >= 2015 ~ "2015 or later")),
+  geom_tippoint(aes(color = ISO3_fig,
                     size = status,
                     shape = status))  +
-  scale_color_viridis(name = "Year",discrete = T) +
+  scale_color_manual(name="",
+                     values=c("UGA"="#528F78",
+                              "KEN"="#A46AA9",
+                              "TZA"="#F4C567",
+                              "MWI"="#F47468",
+                              "ZMB"="#3754A2", 
+                              "Other"="grey80")
+                     )+
   scale_size_manual(name = "", values = c(1,0.6)) + 
   scale_shape_manual(name = "", values = c(16,1)) +
   geom_tiplab(aes(label = ISO3_zoom),size = 0.8)
@@ -1005,17 +1013,19 @@ cocirculate_detection_country_sum <- cocirculate_detection %>%
 ##only map countries with co-circulation in consecutive years
 
 
-color_cocir <- c("AFR10"="#95D840",
-                 "AFR11"="#FF6302",
-                 "AFR13"="purple",
+color_cocir <- c("AFR10"="#FFD915",
+                 "AFR11"="#0F9543",
+                 "AFR13"="#00A3EE",
                  "AFR10,AFR13"="darkgreen",
-                 "AFR1,AFR5,AFR13"="yellow",
                  "water"="#4e92eb")
 
-color_case <- c("0"="#eeeeee",
-                "1-10"="#a3a3a3",
-                "11-100"="#555555",
-                "101-"="black",
+
+
+
+color_case <- c("0"="#f1f1f1",
+                "1-10"="#cbcdcf",
+                "11-100"="#9e9fa5",
+                "101-"="#76777d",
                 "water"="#4e92eb")
 
 ```
