@@ -145,7 +145,7 @@ water_Africa <- water_continent %>% filter(CONTINENT == "Africa")
 ```{r fig1A, echo=F, message=F, warning=F, fig.height=9, fig.width=9, background="white"}
 
 # read supplemental 1 data
-new_seq <- read_xlsx("./supp_data/supp_data_1_sample_metadata.xlsx") %>% filter(meeting_criteria)
+new_seq <- read_xlsx("./supp_data/supplementary_appendix_2.xlsx") %>% filter(meeting_criteria)
 
 
 # 9 sequences from Kenya has no sub-country information and was excluded from this map
@@ -199,7 +199,7 @@ print(fig1_panelA)
 ```{r fig1B, echo=F, message=F, warning=F, fig.height=9, fig.width=9, background="white"}
 
 # read supplemental 2 data
-annotation_raw <- read_xlsx("./supp_data/supp_data_2_annotation.xlsx")
+annotation_raw <- read_xlsx("./supp_data/supplementary_appendix_3.xlsx")
 
 # filter out published genomes
 published_genomes <- annotation_raw %>% 
@@ -243,7 +243,7 @@ seq_num <- rbind(published_genomes,sequenced_new) %>%
                                 ))
 
 # read supplemental 2 data
-case_data <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
+case_data <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
                        sheet="country_level") %>% 
              rename(year=Year) %>%
              mutate(Country=factor(case_when(
@@ -367,7 +367,15 @@ print(fig1_panelB)
 
 # read the mapping data after down-sampling
 subsample_bysample_depth <-
-  read_xlsx("./supp_data/supp_data_4_subsample_sampletype.xlsx") 
+  read_xlsx("./supp_data/supplementary_appendix_5.xlsx") 
+
+
+## outlier statistics
+subsample_bysample_depth_stats <- subsample_bysample_depth %>%
+  group_by(SampleType) %>%
+  summarise(low_outlier=quantile(median_depth,0.25) - 1.5*IQR(median_depth),
+            high_outlier=quantile(median_depth,0.75) + 1.5*IQR(median_depth)) %>%
+  ungroup()
 
 
 # fig1C
@@ -415,7 +423,7 @@ print(fig1_panelC)
 
 # use a 4000 bp sliding window
 subsample_pos_cov_binned <- 
-  read_xlsx("./supp_data/supp_data_5_subsample_poscov.xlsx") 
+  read_xlsx("./supp_data/supplementary_appendix_6.xlsx") 
 
 ###chromosome split point
 chr_split <- round(2961182/4000)
@@ -461,7 +469,7 @@ print(fig1_panelD)
 ```{r prepare tree file, echo=F, message=F, warning=F}
 
 # read ML tree
-tree_1488 <- read.tree("./supp_data/supp_data_6_MLtree.treefile")
+tree_1488 <- read.tree("./supp_data/supplementary_appendix_7.treefile")
 
 # obtain the nodes of the tree
 node <- as_tibble(tree_1488) %>% mutate(label=gsub("'",'',label),
@@ -765,13 +773,13 @@ print(fig3_panelA)
 ```
 
 
-### Supp Figure 3: Maximum likelihood tree of 1488 V. cholerae genomes. Colored by country
+### Supp Figure 2: Maximum likelihood tree of 1488 V. cholerae genomes. Colored by country
 
-```{r supp fig3, echo=F, message=F, warning=F, fig.height=8, fig.width=12, background="white"}
+```{r supp fig2, echo=F, message=F, warning=F, fig.height=8, fig.width=12, background="white"}
 
 
 ##supplemental fig3A
-supp_fig3 <- ggtree(tree_1488,
+supp_fig2 <- ggtree(tree_1488,
                       layout="circular",
                       size=0.5
                       ) %<+% anno_withnode +
@@ -840,7 +848,7 @@ supp_fig3 <- ggtree(tree_1488,
             color="black"
             )
 
-print(supp_fig3)
+print(supp_fig2)
 
 ```
 
@@ -897,7 +905,56 @@ print(fig3_panelBD)
 ```
 
 
+### Zoom view of all lineage
 
+```{r zoom_all_label, echo=F, message=F, warning=F, fig.height=32, fig.width=32, background="white"}
+
+# zoom-in tree data
+anno_withnode_zoom_all <- anno_withnode %>% 
+        mutate(ISO3_zoom=ifelse(continent=="Africa",
+                                paste(ISO3,"|",year,sep = ""),
+                                ISO3
+                                ),
+               ISO3_zoom=ifelse(!is.na(district),
+                                paste(ISO3_zoom,"|",district,sep = ""),
+                                ISO3_zoom
+                                ),
+               ISO3_fig = ifelse(status == "Genomes sequenced in this paper",
+                            ISO3, "Other")
+               )
+
+
+fig_zoomall <- ggtree(tree_1488,
+                       layout="circular",
+                       size=0.2
+                       ) %<+% anno_withnode_zoom_all +
+  geom_treescale(x=0.003,
+                 y=760,
+                 fontsize=4,
+                 linesize=1, 
+                 offset=-50
+                 ) +
+  geom_nodelab(size=0.8) +
+  geom_tippoint(aes(color = ISO3_fig,
+                    size = status,
+                    shape = status))  +
+  scale_color_manual(name="",
+                     values=c("UGA"="#528F78",
+                              "KEN"="#A46AA9",
+                              "TZA"="#F4C567",
+                              "MWI"="#F47468",
+                              "ZMB"="#3754A2", 
+                              "Other"="grey80")
+                     )+
+  scale_size_manual(name = "", values = c(1,0.6)) + 
+  scale_shape_manual(name = "", values = c(16,1)) +
+  geom_tiplab(aes(label = ISO3_zoom),size = 0.8)
+ 
+
+print(fig_zoomall)
+
+
+```
 
 
 ### Figure3C: Posterior distribution of time of the most recent common ancestor (tMRCA) of the AFR13 lineage given the dataset presented in this manuscript, as compared to previous estimates
@@ -905,7 +962,7 @@ print(fig3_panelBD)
 ```{r fig3C, echo=F, message=F, warning=F, fig.height=8, fig.width=12, background="white"}
 
 # read T13 tMRCA posterior data 
-T13_tMRCA <- read_xlsx("./supp_data/supp_data_7_tMRCAT13_data.xlsx") %>%
+T13_tMRCA <- read_xlsx("./supp_data/supplementary_appendix_8.xlsx") %>%
               rename(value=`out_tMRCA_T13_TreeStat_ed_Age.log:age(T13)`)
 
 # get the density data
@@ -1041,7 +1098,7 @@ KEN_neighbors <- data.frame(ISO3=c("UGA",
                                    "SSD")
                             )
 # read Kenya 2009 case data
-KEN_2009_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
+KEN_2009_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
                            sheet="KEN") %>%
                   dplyr::select(NAME_1, cases09) %>%
                   rename(case_n=cases09) %>%
@@ -1205,7 +1262,7 @@ print(fig4_panelA)
 ```{r fig4B, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
 
 # read Kenya 2010 case data
-KEN_2010_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
+KEN_2010_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
                            sheet="KEN") %>%
                   dplyr::select(NAME_1, cases10) %>%
                   rename(case_n=cases10) %>%
@@ -1375,7 +1432,7 @@ MWI_neighbors <- data.frame(ISO3=c("TZA",
                                    )
                             )
 # read Malawi 2015 case data
-MWI_2015_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
+MWI_2015_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
                            sheet="MWI") %>%
                   dplyr::select(NAME_1, cases15) %>%
                   rename(case_n=cases15) %>%
@@ -1546,7 +1603,7 @@ MWI_neighbors <- data.frame(ISO3=c("TZA",
                                    )
                             )
 # read Malawi 2016 case data
-MWI_2016_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx",
+MWI_2016_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
                            sheet="MWI") %>%
                   dplyr::select(NAME_1, cases16) %>%
                   rename(case_n=cases16) %>%
@@ -1711,7 +1768,7 @@ print(fig4_panelD)
 ```{r supp_fig1A, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
 vc_1488_rtt <- 
-  read_xlsx("./supp_data/supp_data_8_root_to_tip_data.xlsx",
+  read_xlsx("./supp_data/supplementary_appendix_9.xlsx",
              sheet = "full_tree")
 
 
@@ -1750,7 +1807,7 @@ print(suppfig1_panelA)
 
 ```{r supp_fig1B, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
-vc_wave3_rtt <- read_xlsx("./supp_data/supp_data_8_root_to_tip_data.xlsx",
+vc_wave3_rtt <- read_xlsx("./supp_data/supplementary_appendix_9.xlsx",
                          sheet="wave3_tree")
 
 
@@ -1789,7 +1846,7 @@ TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI",
 
 ####TZA_2015
 
-TZA_2015_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx", sheet = "TZA") %>%
+TZA_2015_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>%
   dplyr::select(NAME_1,cases15) %>%
   rename(case_n = cases15) %>%
   mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
@@ -1923,7 +1980,7 @@ TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI",
 
 ####TZA_2017
 
-TZA_2017_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx", sheet = "TZA") %>%
+TZA_2017_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>%
   dplyr::select(NAME_1,cases17) %>%
   rename(case_n = cases17) %>%
   mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
@@ -2056,7 +2113,7 @@ TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI",
 
 ####TZA_2018
 
-TZA_2018_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx", sheet = "TZA") %>%
+TZA_2018_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>%
   dplyr::select(NAME_1,cases18) %>%
   rename(case_n = cases18) %>%
   mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
@@ -2187,7 +2244,7 @@ print(fig_TZA_2018_cocir)
 UGA_neighbors <- data.frame(ISO3 = c("SSD","KEN","TZA","RWA","COD"))
 ####UGA_2015
 
-UGA_2015_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx", sheet = "UGA") %>%
+UGA_2015_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "UGA") %>%
   dplyr::select(NAME_1,cases15) %>%
   rename(case_n = cases15) %>%
   mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
@@ -2321,7 +2378,7 @@ print(fig_UGA_2015_cocir)
 UGA_neighbors <- data.frame(ISO3 = c("SSD","KEN","TZA","RWA","COD"))
 ####UGA_2018
 
-UGA_2018_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx", sheet = "UGA") %>%
+UGA_2018_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "UGA") %>%
   dplyr::select(NAME_1,cases18) %>%
   rename(case_n = cases18) %>%
   mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
@@ -2457,7 +2514,7 @@ ZMB_neighbors <- data.frame(ISO3 = c("AGO","TZA","MWI","COD",
                                      "MOZ","ZWE","BWA","NAM"))
 ####ZMB_2016
 
-ZMB_2016_case <- read_xlsx("./supp_data/supp_data_3_cholera_cases.xlsx", sheet = "ZMB") %>%
+ZMB_2016_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "ZMB") %>%
   dplyr::select(NAME_1,cases16) %>%
   rename(case_n = cases16) %>%
   mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
