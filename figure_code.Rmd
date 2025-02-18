@@ -773,87 +773,6 @@ print(fig3_panelA)
 ```
 
 
-### Supp Figure 2: Maximum likelihood tree of 1488 V. cholerae genomes. Colored by country
-
-```{r supp fig2, echo=F, message=F, warning=F, fig.height=8, fig.width=12, background="white"}
-
-
-##supplemental fig3A
-supp_fig2 <- ggtree(tree_1488,
-                      layout="circular",
-                      size=0.5
-                      ) %<+% anno_withnode +
-  geom_treescale(x=0.003,
-                 y=760,
-                 fontsize=4,
-                 linesize=1,
-                 offset=-50
-                 ) + 
-  geom_tippoint(aes(color=ISO3),
-                size=1.5,
-                shape=16
-                )  + 
-  # Add line segments for each group.
-  geom_segment(data=coord_groups1,
-               aes(x=my_x, 
-                   y=y1_adj, 
-                   xend=my_x, 
-                   yend=y2_adj
-                   ),
-               color="black",
-               lineend="butt",
-               size=1,
-               arrow=arrow(ends="both",
-                           angle=90,
-                           length=unit(.1, "cm")
-                           )
-               )+
-  # Add text group labels at the middle of each segment.
-  geom_text(data=coord_groups1,
-            aes(x=label_x,
-                y=y_mid,
-                angle=angle_adj,
-                hjust=hjust_adj,
-                label=te
-                ),
-            vjust=0, 
-            size=4,
-            nudge_x=0.002, # Offsetting label from its default x coordinate.
-            color="black") +
-  geom_segment(data=coord_groups2,
-               aes(x=my_x - 0.002, 
-                   y=y1_adj, 
-                   xend=my_x- 0.002, 
-                   yend=y2_adj
-                   ),
-               color="black",
-               lineend="butt",
-               size=1,
-               arrow=arrow(ends="both",
-                           angle=90,
-                           length=unit(.1, "cm")
-                           )
-               ) +
-  # Add text group labels at the middle of each segment.
-  geom_text(data=coord_groups2,
-            aes(x=my_x - 0.002,
-                y=y_mid,
-                angle=angle_adj,
-                hjust=hjust_adj,
-                label=te
-                ),
-            vjust=1.5,
-            size=4,
-            nudge_x=-0.003, # Offsetting label from its default x coordinate.
-            color="black"
-            )
-
-print(supp_fig2)
-
-```
-
-
-
 
 
 
@@ -904,57 +823,98 @@ print(fig3_panelBD)
 
 ```
 
+### zoom view for wave-colored 
+
+# ```{r zoom_by_wave, echo=F, message=F, warning=F, fig.height=32, fig.width=32, background="white"}
+# 
+# # zoom-in tree data
+# anno_withnode_zoom <- anno_withnode %>% 
+#         mutate(ISO3_zoom=ifelse(status == "Genomes sequenced in this paper",
+#                                 paste(ISO3,"|",year,sep = ""),
+#                                 ISO3
+#                                 ),
+#                ISO3_fig = ifelse(status == "Genomes sequenced in this paper",
+#                             ISO3, "Other")
+#                )
+# 
+# 
+# wave_zoom <- ggtree(tree_1488,
+#                     layout="rectangular",
+#                     size=0.2
+#                     ) %<+% anno_withnode_zoom +
+#   geom_treescale(x=0.003,
+#                  y=760,
+#                  fontsize=4,
+#                  linesize=1, 
+#                  offset=-50
+#                  ) +
+#   geom_nodelab(aes(label=node),
+#                size=0.8) +
+#   geom_tippoint(aes(color = factor(wave),
+#                     size = status,
+#                     shape = status)) +
+#   scale_size_manual(name = "", values = c(1,0.6)) + 
+#   scale_shape_manual(name = "", values = c(16,1)) +
+#   geom_tiplab(aes(label = taxa),size = 0.8)
+#  
+# 
+# print(wave_zoom)
+# 
+# ```
+
+
+
 
 ### Zoom view of all lineage
 
-```{r zoom_all_label, echo=F, message=F, warning=F, fig.height=32, fig.width=32, background="white"}
-
-# zoom-in tree data
-anno_withnode_zoom_all <- anno_withnode %>% 
-        mutate(ISO3_zoom=ifelse(continent=="Africa",
-                                paste(ISO3,"|",year,sep = ""),
-                                ISO3
-                                ),
-               ISO3_zoom=ifelse(!is.na(district),
-                                paste(ISO3_zoom,"|",district,sep = ""),
-                                ISO3_zoom
-                                ),
-               ISO3_fig = ifelse(status == "Genomes sequenced in this paper",
-                            ISO3, "Other")
-               )
-
-
-fig_zoomall <- ggtree(tree_1488,
-                       layout="circular",
-                       size=0.2
-                       ) %<+% anno_withnode_zoom_all +
-  geom_treescale(x=0.003,
-                 y=760,
-                 fontsize=4,
-                 linesize=1, 
-                 offset=-50
-                 ) +
-  geom_nodelab(size=0.8) +
-  geom_tippoint(aes(color = ISO3_fig,
-                    size = status,
-                    shape = status))  +
-  scale_color_manual(name="",
-                     values=c("UGA"="#528F78",
-                              "KEN"="#A46AA9",
-                              "TZA"="#F4C567",
-                              "MWI"="#F47468",
-                              "ZMB"="#3754A2", 
-                              "Other"="grey80")
-                     )+
-  scale_size_manual(name = "", values = c(1,0.6)) + 
-  scale_shape_manual(name = "", values = c(16,1)) +
-  geom_tiplab(aes(label = ISO3_zoom),size = 0.8)
- 
-
-print(fig_zoomall)
-
-
-```
+# ```{r zoom_all_label, echo=F, message=F, warning=F, fig.height=32, fig.width=32, background="white"}
+# 
+# # zoom-in tree data
+# anno_withnode_zoom_all <- anno_withnode %>% 
+#         mutate(ISO3_zoom=ifelse(continent=="Africa",
+#                                 paste(ISO3,"|",year,sep = ""),
+#                                 ISO3
+#                                 ),
+#                ISO3_zoom=ifelse(!is.na(district),
+#                                 paste(ISO3_zoom,"|",district,sep = ""),
+#                                 ISO3_zoom
+#                                 ),
+#                ISO3_fig = ifelse(status == "Genomes sequenced in this paper",
+#                             ISO3, "Other")
+#                )
+# 
+# 
+# fig_zoomall <- ggtree(tree_1488,
+#                        layout="circular",
+#                        size=0.2
+#                        ) %<+% anno_withnode_zoom_all +
+#   geom_treescale(x=0.003,
+#                  y=760,
+#                  fontsize=4,
+#                  linesize=1, 
+#                  offset=-50
+#                  ) +
+#   geom_nodelab(size=0.8) +
+#   geom_tippoint(aes(color = ISO3_fig,
+#                     size = status,
+#                     shape = status))  +
+#   scale_color_manual(name="",
+#                      values=c("UGA"="#528F78",
+#                               "KEN"="#A46AA9",
+#                               "TZA"="#F4C567",
+#                               "MWI"="#F47468",
+#                               "ZMB"="#3754A2", 
+#                               "Other"="grey80")
+#                      )+
+#   scale_size_manual(name = "", values = c(1,0.6)) + 
+#   scale_shape_manual(name = "", values = c(16,1)) +
+#   geom_tiplab(aes(label = ISO3_zoom),size = 0.8)
+#  
+# 
+# print(fig_zoomall)
+# 
+# 
+# ```
 
 
 ### Figure3C: Posterior distribution of time of the most recent common ancestor (tMRCA) of the AFR13 lineage given the dataset presented in this manuscript, as compared to previous estimates
@@ -1835,807 +1795,811 @@ print(suppfig1_panelB)
 
 ```
 
-### Other co-circulation
-
-####TZA: 2015
-
-```{r co-circulation_TZA_2015, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
-
-TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI",
-                                     "ZMB","MWI","MOZ","COD"))
-
-####TZA_2015
-
-TZA_2015_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>%
-  dplyr::select(NAME_1,cases15) %>%
-  rename(case_n = cases15) %>%
-  mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
-                                     case_n > 100 ~ 4),
-                           labels = c("0","101-")))
-
-
-TZA_2015_te <- anno_withnode %>%
-              filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak" &
-                     te != "AFR16" &
-                     te != "AFR17"
-                     ) %>%
-  filter(ISO3 == "TZA" & year == 2015)
-
-TZA_2015_te_sum <- TZA_2015_te %>% group_by(district,te) %>%
-  summarise(n = n()) %>% ungroup() %>%
-  mutate(label = paste(te," : ",n,sep = ""))
-
-TZA_2015_te_country <- TZA_2015_te_sum %>%
-  arrange(district,as.numeric(str_replace(te,"T",""))) %>%
-  group_by(district) %>%
-  summarise(te_sum = paste0(te,collapse = ","),
-            te_label = paste0(label,collapse = ", ")) %>% ungroup() %>%
-  rename(NAME_1 = district) %>%
-  mutate(te_label = str_wrap(te_label, width = 20))
-
-TZA_2015_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)},
-                           list(TZA1,TZA_2015_case,TZA_2015_te_country))
-
-
-TZA_2015_neighbor_te <- merge(TZA_neighbors,
-                              anno_withnode %>%
-                                filter(te != "sporadic/local outbreak" &
-                                       te != "AFR16" &
-                                       te != "AFR17") %>%
-                                filter(ISO3 %in% TZA_neighbors$ISO3 &
-                                         year == 2015)%>% group_by(ISO3,te) %>%
-                                summarise(n = n()) %>% group_by(ISO3) %>%
-                                summarise(neighbor_label =
-                                            paste0(te,collapse = ",")) %>%
-                                ungroup() %>% mutate(neighbor_label =
-                                                       paste(ISO3," :\n",neighbor_label,sep = "")),
-                              by = "ISO3",all.x = T) %>%
-  mutate(neighbor_label =
-           ifelse(is.na(neighbor_label),
-                  paste(ISO3, " :\nNo data", sep = ""),
-                  neighbor_label))
-
-
-
-
-TZA_2015_neighbor_te$x = c(30,29,38,39,33.8,30,31,31)
-TZA_2015_neighbor_te$y = c(-3.2,-6,-1.5,-12,-11.3,-1.8,0,-10)
-TZA_2015_neighbor_te$size = c('s','l','l','l','s','s','l','l')
-
-fig_TZA_2015_te <- TZA_2015_case_te %>% ggplot()  +
-                            geom_sf(size=0.6,
-                                    fill="white"
-                                    ) +
-                            geom_sf(size=0.6,
-                                    aes(fill=te_sum),
-                                    data=TZA_2015_case_te %>% 
-                                          filter(!is.na(te_sum))
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    ) +
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=TZA_2015_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(28,41),
-                                     ylim = c(-12,0)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_cocir
-                                              )
-
-fig_TZA_2015_case <- TZA_2015_case_te %>% ggplot()   +
-                            geom_sf(data=TZA_2015_case_te,
-                                    aes(fill=case_cat),
-                                    size=1
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    )+
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=TZA_2015_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(28,41),
-                                     ylim = c(-12,0)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_case
-                                              )
-
-
-fig_TZA_2015_cocir <- ggarrange(fig_TZA_2015_te,
-                            fig_TZA_2015_case,
-                            nrow = 1
-                            )
-
-
-
-print(fig_TZA_2015_cocir)
-```
-
-
-####TZA: 2017
-
-```{r co-circulation_TZA_2017, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
-
-TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI",
-                                     "ZMB","MWI","MOZ","COD"))
-
-####TZA_2017
-
-TZA_2017_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>%
-  dplyr::select(NAME_1,cases17) %>%
-  rename(case_n = cases17) %>%
-  mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
-                                     case_n > 100 ~ 4),
-                           labels = c("0","101-")))
-
-
-TZA_2017_te <- anno_withnode %>%
-              filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak" &
-                     te != "AFR16" &
-                     te != "AFR17"
-                     ) %>%
-  filter(ISO3 == "TZA" & year == 2017)
-
-TZA_2017_te_sum <- TZA_2017_te %>% group_by(district,te) %>%
-  summarise(n = n()) %>% ungroup() %>%
-  mutate(label = paste(te," : ",n,sep = ""))
-
-TZA_2017_te_country <- TZA_2017_te_sum %>%
-  arrange(district,as.numeric(str_replace(te,"T",""))) %>%
-  group_by(district) %>%
-  summarise(te_sum = paste0(te,collapse = ","),
-            te_label = paste0(label,collapse = ", ")) %>% ungroup() %>%
-  rename(NAME_1 = district) %>%
-  mutate(te_label = str_wrap(te_label, width = 20))
-
-TZA_2017_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)},
-                           list(TZA1,TZA_2017_case,TZA_2017_te_country))
-
-
-TZA_2017_neighbor_te <- merge(TZA_neighbors,
-                              anno_withnode %>%
-                                filter(te != "sporadic/local outbreak" &
-                                       te != "AFR16" &
-                                       te != "AFR17") %>%
-                                filter(ISO3 %in% TZA_neighbors$ISO3 &
-                                         year == 2017)%>% group_by(ISO3,te) %>%
-                                summarise(n = n()) %>% group_by(ISO3) %>%
-                                summarise(neighbor_label =
-                                            paste0(te,collapse = ",")) %>%
-                                ungroup() %>% mutate(neighbor_label =
-                                                       paste(ISO3," :\n",neighbor_label,sep = "")),
-                              by = "ISO3",all.x = T) %>%
-  mutate(neighbor_label =
-           ifelse(is.na(neighbor_label),
-                  paste(ISO3, " :\nNo data", sep = ""),
-                  neighbor_label))
-
-
-
-
-TZA_2017_neighbor_te$x = c(30,29,38,39,33.8,30,31,31)
-TZA_2017_neighbor_te$y = c(-3.2,-6,-1.5,-12,-11.3,-1.8,0,-10)
-TZA_2017_neighbor_te$size = c('s','l','l','l','s','s','l','l')
-
-fig_TZA_2017_te <- TZA_2017_case_te %>% ggplot()  +
-                            geom_sf(size=0.6,
-                                    fill="white"
-                                    ) +
-                            geom_sf(size=0.6,
-                                    aes(fill=te_sum),
-                                    data=TZA_2017_case_te %>% 
-                                          filter(!is.na(te_sum))
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    ) +
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=TZA_2017_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(28,41),
-                                     ylim = c(-12,0)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_cocir
-                                              )
-
-fig_TZA_2017_case <- TZA_2017_case_te %>% ggplot()   +
-                            geom_sf(data=TZA_2017_case_te,
-                                    aes(fill=case_cat),
-                                    size=1
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    )+
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=TZA_2017_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(28,41),
-                                     ylim = c(-12,0)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_case
-                                              )
-
-
-fig_TZA_2017_cocir <- ggarrange(fig_TZA_2017_te,
-                            fig_TZA_2017_case,
-                            nrow = 1
-                            )
-
-
-
-print(fig_TZA_2017_cocir)
-```
-
-####TZA: 2018
-
-```{r co-circulation_TZA_2018, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
-
-TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI",
-                                     "ZMB","MWI","MOZ","COD"))
-
-####TZA_2018
-
-TZA_2018_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>%
-  dplyr::select(NAME_1,cases18) %>%
-  rename(case_n = cases18) %>%
-  mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
-                                     case_n > 100 ~ 4),
-                           labels = c("0","101-")))
-
-
-TZA_2018_te <- anno_withnode %>%
-              filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak" &
-                     te != "AFR16" &
-                     te != "AFR17"
-                     ) %>%
-  filter(ISO3 == "TZA" & year == 2018)
-
-TZA_2018_te_sum <- TZA_2018_te %>% group_by(district,te) %>%
-  summarise(n = n()) %>% ungroup() %>%
-  mutate(label = paste(te," : ",n,sep = ""))
-
-TZA_2018_te_country <- TZA_2018_te_sum %>%
-  arrange(district,as.numeric(str_replace(te,"T",""))) %>%
-  group_by(district) %>%
-  summarise(te_sum = paste0(te,collapse = ","),
-            te_label = paste0(label,collapse = ", ")) %>% ungroup() %>%
-  rename(NAME_1 = district) %>%
-  mutate(te_label = str_wrap(te_label, width = 20))
-
-TZA_2018_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)},
-                           list(TZA1,TZA_2018_case,TZA_2018_te_country))
-
-
-TZA_2018_neighbor_te <- merge(TZA_neighbors,
-                              anno_withnode %>%
-                                filter(te != "sporadic/local outbreak" &
-                                       te != "AFR16" &
-                                       te != "AFR17") %>%
-                                filter(ISO3 %in% TZA_neighbors$ISO3 &
-                                         year == 2018)%>% group_by(ISO3,te) %>%
-                                summarise(n = n()) %>% group_by(ISO3) %>%
-                                summarise(neighbor_label =
-                                            paste0(te,collapse = ",")) %>%
-                                ungroup() %>% mutate(neighbor_label =
-                                                       paste(ISO3," :\n",neighbor_label,sep = "")),
-                              by = "ISO3",all.x = T) %>%
-  mutate(neighbor_label =
-           ifelse(is.na(neighbor_label),
-                  paste(ISO3, " :\nNo data", sep = ""),
-                  neighbor_label))
-
-
-
-
-TZA_2018_neighbor_te$x = c(30,29,38,39,33.8,30,31,31)
-TZA_2018_neighbor_te$y = c(-3.2,-6,-1.5,-12,-11.3,-1.8,0,-10)
-TZA_2018_neighbor_te$size = c('s','l','l','l','s','s','l','l')
-
-fig_TZA_2018_te <- TZA_2018_case_te %>% ggplot()  +
-                            geom_sf(size=0.6,
-                                    fill="white"
-                                    ) +
-                            geom_sf(size=0.6,
-                                    aes(fill=te_sum),
-                                    data=TZA_2018_case_te %>% 
-                                          filter(!is.na(te_sum))
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    ) +
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=TZA_2018_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(28,41),
-                                     ylim = c(-12,0)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_cocir
-                                              )
-
-fig_TZA_2018_case <- TZA_2018_case_te %>% ggplot()   +
-                            geom_sf(data=TZA_2018_case_te,
-                                    aes(fill=case_cat),
-                                    size=1
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    )+
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=TZA_2018_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(28,41),
-                                     ylim = c(-12,0)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_case
-                                              )
-
-
-fig_TZA_2018_cocir <- ggarrange(fig_TZA_2018_te,
-                            fig_TZA_2018_case,
-                            nrow = 1
-                            )
-
-
-
-print(fig_TZA_2018_cocir)
-```
-
-####UGA: 2015
-
-```{r co-circulation_UGA_2015, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
-
-UGA_neighbors <- data.frame(ISO3 = c("SSD","KEN","TZA","RWA","COD"))
-####UGA_2015
-
-UGA_2015_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "UGA") %>%
-  dplyr::select(NAME_1,cases15) %>%
-  rename(case_n = cases15) %>%
-  mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
-                                      case_n > 0 & case_n <= 10 ~ 2,
-                                      case_n > 10 & case_n <= 100 ~ 3,
-                                      case_n > 100 ~ 4),
-                           labels = c("0","1-10","11-100","101-")))
-
-
-UGA_2015_te <- anno_withnode %>%
-              filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak" &
-                     te != "AFR16" &
-                     te != "AFR17"
-                     ) %>%
-  filter(ISO3 == "UGA" & year == 2015)
-
-UGA_2015_te_sum <- UGA_2015_te %>% group_by(district,te) %>%
-  summarise(n = n()) %>% ungroup() %>%
-  mutate(label = paste(te," : ",n,sep = ""))
-
-UGA_2015_te_country <- UGA_2015_te_sum %>%
-  arrange(district,as.numeric(str_replace(te,"T",""))) %>%
-  group_by(district) %>%
-  summarise(te_sum = paste0(te,collapse = ","),
-            te_label = paste0(label,collapse = ", ")) %>% ungroup() %>%
-  rename(NAME_1 = district) %>%
-  mutate(te_label = str_wrap(te_label, width = 20))
-
-UGA_2015_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)},
-                           list(UGA1,UGA_2015_case,UGA_2015_te_country))
-
-
-UGA_2015_neighbor_te <- merge(UGA_neighbors,
-                              anno_withnode %>%
-                                filter(te != "sporadic/local outbreak" &
-                                       te != "AFR16" &
-                                       te != "AFR17") %>%
-                                filter(ISO3 %in% UGA_neighbors$ISO3 &
-                                         year == 2015)%>% group_by(ISO3,te) %>%
-                                summarise(n = n()) %>% group_by(ISO3) %>%
-                                summarise(neighbor_label =
-                                            paste0(te,collapse = ",")) %>%
-                                ungroup() %>% mutate(neighbor_label =
-                                                       paste(ISO3," :\n",neighbor_label,sep = "")),
-                              by = "ISO3",all.x = T) %>%
-  mutate(neighbor_label =
-           ifelse(is.na(neighbor_label),
-                  paste(ISO3, " :\nNo data", sep = ""),
-                  neighbor_label))
-
-
-
-
-UGA_2015_neighbor_te$x = c(30,35,30,32,33)
-UGA_2015_neighbor_te$y = c(2,0.5,-1.9,4.5,-1.5)
-UGA_2015_neighbor_te$size = c('l','l','s','l','l')
-
-
-fig_UGA_2015_te <- UGA_2015_case_te %>% ggplot()  +
-                            geom_sf(size=0.6,
-                                    fill="white"
-                                    ) +
-                            geom_sf(size=0.6,
-                                    aes(fill=te_sum),
-                                    data=UGA_2015_case_te %>% 
-                                          filter(!is.na(te_sum))
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    ) +
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=UGA_2015_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(29.5,35.4),
-                                     ylim = c(-2,4.4)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_cocir
-                                              )
-
-fig_UGA_2015_case <- UGA_2015_case_te %>% ggplot()   +
-                            geom_sf(data=UGA_2015_case_te,
-                                    aes(fill=case_cat),
-                                    size=1
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    )+
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=UGA_2015_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(29.5,35.4),
-                                     ylim = c(-2,4.4)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_case
-                                              )
-
-
-fig_UGA_2015_cocir <- ggarrange(fig_UGA_2015_te,
-                            fig_UGA_2015_case,
-                            nrow = 1
-                            )
-
-
-
-print(fig_UGA_2015_cocir)
-```
-
-####UGA: 2018
-
-```{r co-circulation_UGA_2018, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
-
-UGA_neighbors <- data.frame(ISO3 = c("SSD","KEN","TZA","RWA","COD"))
-####UGA_2018
-
-UGA_2018_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "UGA") %>%
-  dplyr::select(NAME_1,cases18) %>%
-  rename(case_n = cases18) %>%
-  mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
-                                      case_n > 0 & case_n <= 10 ~ 2,
-                                      case_n > 10 & case_n <= 100 ~ 3,
-                                      case_n > 100 ~ 4),
-                           labels = c("0","1-10","11-100","101-")))
-
-
-UGA_2018_te <- anno_withnode %>%
-              filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak" &
-                     te != "AFR16" &
-                     te != "AFR17"
-                     ) %>%
-  filter(ISO3 == "UGA" & year == 2018)
-
-UGA_2018_te_sum <- UGA_2018_te %>% group_by(district,te) %>%
-  summarise(n = n()) %>% ungroup() %>%
-  mutate(label = paste(te," : ",n,sep = ""))
-
-UGA_2018_te_country <- UGA_2018_te_sum %>%
-  arrange(district,as.numeric(str_replace(te,"T",""))) %>%
-  group_by(district) %>%
-  summarise(te_sum = paste0(te,collapse = ","),
-            te_label = paste0(label,collapse = ", ")) %>% ungroup() %>%
-  rename(NAME_1 = district) %>%
-  mutate(te_label = str_wrap(te_label, width = 20))
-
-UGA_2018_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)},
-                           list(UGA1,UGA_2018_case,UGA_2018_te_country))
-
-
-UGA_2018_neighbor_te <- merge(UGA_neighbors,
-                              anno_withnode %>%
-                                filter(te != "sporadic/local outbreak" &
-                                       te != "AFR16" &
-                                       te != "AFR17") %>%
-                                filter(ISO3 %in% UGA_neighbors$ISO3 &
-                                         year == 2018)%>% group_by(ISO3,te) %>%
-                                summarise(n = n()) %>% group_by(ISO3) %>%
-                                summarise(neighbor_label =
-                                            paste0(te,collapse = ",")) %>%
-                                ungroup() %>% mutate(neighbor_label =
-                                                       paste(ISO3," :\n",neighbor_label,sep = "")),
-                              by = "ISO3",all.x = T) %>%
-  mutate(neighbor_label =
-           ifelse(is.na(neighbor_label),
-                  paste(ISO3, " :\nNo data", sep = ""),
-                  neighbor_label))
-
-
-
-
-UGA_2018_neighbor_te$x = c(30,35,30,32,33)
-UGA_2018_neighbor_te$y = c(2,0.5,-1.9,4.5,-1.5)
-UGA_2018_neighbor_te$size = c('l','l','s','l','l')
-
-
-fig_UGA_2018_te <- UGA_2018_case_te %>% ggplot()  +
-                            geom_sf(size=0.6,
-                                    fill="white"
-                                    ) +
-                            geom_sf(size=0.6,
-                                    aes(fill=te_sum),
-                                    data=UGA_2018_case_te %>% 
-                                          filter(!is.na(te_sum))
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    ) +
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=UGA_2018_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(29.5,35.4),
-                                     ylim = c(-2,4.4)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_cocir
-                                              )
-
-fig_UGA_2018_case <- UGA_2018_case_te %>% ggplot()   +
-                            geom_sf(data=UGA_2018_case_te,
-                                    aes(fill=case_cat),
-                                    size=1
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    )+
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=UGA_2018_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(29.5,35.4),
-                                     ylim = c(-2,4.4)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_case
-                                              )
-
-
-fig_UGA_2018_cocir <- ggarrange(fig_UGA_2018_te,
-                            fig_UGA_2018_case,
-                            nrow = 1
-                            )
-
-
-
-print(fig_UGA_2018_cocir)
-```
-
-
-####ZMB: 2016
-
-```{r co-circulation_ZMB_2016, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
-
-ZMB_neighbors <- data.frame(ISO3 = c("AGO","TZA","MWI","COD",
-                                     "MOZ","ZWE","BWA","NAM"))
-####ZMB_2016
-
-ZMB_2016_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "ZMB") %>%
-  dplyr::select(NAME_1,cases16) %>%
-  rename(case_n = cases16) %>%
-  mutate(case_cat = factor(case_when(case_n == 0 ~ 1,
-                                      case_n > 0 & case_n <= 10 ~ 2,
-                                      case_n > 10 & case_n <= 100 ~ 3,
-                                      case_n > 100 ~ 4),
-                           labels = c("0","1-10","11-100","101-")))
-
-
-ZMB_2016_te <- anno_withnode %>%
-              filter(!stri_isempty(district) &
-                     te != "sporadic/local outbreak" &
-                     te != "AFR16" &
-                     te != "AFR17"
-                     ) %>%
-  filter(ISO3 == "ZMB" & year == 2016)
-
-ZMB_2016_te_sum <- ZMB_2016_te %>% group_by(district,te) %>%
-  summarise(n = n()) %>% ungroup() %>%
-  mutate(label = paste(te," : ",n,sep = ""))
-
-ZMB_2016_te_country <- ZMB_2016_te_sum %>%
-  arrange(district,as.numeric(str_replace(te,"T",""))) %>%
-  group_by(district) %>%
-  summarise(te_sum = paste0(te,collapse = ","),
-            te_label = paste0(label,collapse = ", ")) %>% ungroup() %>%
-  rename(NAME_1 = district) %>%
-  mutate(te_label = str_wrap(te_label, width = 20))
-
-ZMB_2016_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)},
-                           list(ZMB1,ZMB_2016_case,ZMB_2016_te_country))
-
-
-ZMB_2016_neighbor_te <- merge(ZMB_neighbors,
-                              anno_withnode %>%
-                                filter(te != "sporadic/local outbreak" &
-                                       te != "AFR16" &
-                                       te != "AFR17") %>%
-                                filter(ISO3 %in% ZMB_neighbors$ISO3 &
-                                         year == 2016)%>% group_by(ISO3,te) %>%
-                                summarise(n = n()) %>% group_by(ISO3) %>%
-                                summarise(neighbor_label =
-                                            paste0(te,collapse = ",")) %>%
-                                ungroup() %>% mutate(neighbor_label =
-                                                       paste(ISO3," :\n",neighbor_label,sep = "")),
-                              by = "ISO3",all.x = T) %>%
-  mutate(neighbor_label =
-           ifelse(is.na(neighbor_label),
-                  paste(ISO3, " :\nNo data", sep = ""),
-                  neighbor_label))
-
-
-
-
-ZMB_2016_neighbor_te$x = c(20,24,26,33,33.7,20,32,30)
-ZMB_2016_neighbor_te$y = c(-12,-19,-10,-15,-13,-19,-7.9,-18)
-ZMB_2016_neighbor_te$size = c('l','l','l','s','s','s','l','l')
-
-fig_ZMB_2016_te <- ZMB_2016_case_te %>% ggplot()  +
-                            geom_sf(size=0.6,
-                                    fill="white"
-                                    ) +
-                            geom_sf(size=0.6,
-                                    aes(fill=te_sum),
-                                    data=ZMB_2016_case_te %>% 
-                                          filter(!is.na(te_sum))
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    ) +
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=ZMB_2016_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(19.5,33.8),
-                                     ylim = c(-20,-7)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_cocir
-                                              )
-
-fig_ZMB_2016_case <- ZMB_2016_case_te %>% ggplot()   +
-                            geom_sf(data=ZMB_2016_case_te,
-                                    aes(fill=case_cat),
-                                    size=1
-                                    ) +
-                            geom_sf(data=water_Africa,
-                                    aes(fill=type)
-                                    ) +
-                            geom_sf(size=0.8,
-                                    fill="transparent",
-                                    data=all_countries0
-                                    )+
-                            geom_text(aes(label=neighbor_label,
-                                          x=x,
-                                          y=y
-                                          ),
-                                      data=ZMB_2016_neighbor_te
-                                      ) +
-                            coord_sf(xlim = c(19.5,33.8),
-                                     ylim = c(-20,-7)) +
-                            theme_map() + 
-                            theme(legend.position="right") +
-                            scale_fill_manual(name="",
-                                              values=color_case
-                                              )
-
-
-fig_ZMB_2016_cocir <- ggarrange(fig_ZMB_2016_te,
-                            fig_ZMB_2016_case,
-                            nrow = 1
-                            )
-
-
-
-print(fig_ZMB_2016_cocir)
-```
+
+
+
+
+<!-- ### Other co-circulation -->
+
+<!-- ####TZA: 2015 -->
+
+<!-- ```{r co-circulation_TZA_2015, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"} -->
+
+<!-- TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI", -->
+<!--                                      "ZMB","MWI","MOZ","COD")) -->
+
+<!-- ####TZA_2015 -->
+
+<!-- TZA_2015_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>% -->
+<!--   dplyr::select(NAME_1,cases15) %>% -->
+<!--   rename(case_n = cases15) %>% -->
+<!--   mutate(case_cat = factor(case_when(case_n == 0 ~ 1, -->
+<!--                                      case_n > 100 ~ 4), -->
+<!--                            labels = c("0","101-"))) -->
+
+
+<!-- TZA_2015_te <- anno_withnode %>% -->
+<!--               filter(!stri_isempty(district) & -->
+<!--                      te != "sporadic/local outbreak" & -->
+<!--                      te != "AFR16" & -->
+<!--                      te != "AFR17" -->
+<!--                      ) %>% -->
+<!--   filter(ISO3 == "TZA" & year == 2015) -->
+
+<!-- TZA_2015_te_sum <- TZA_2015_te %>% group_by(district,te) %>% -->
+<!--   summarise(n = n()) %>% ungroup() %>% -->
+<!--   mutate(label = paste(te," : ",n,sep = "")) -->
+
+<!-- TZA_2015_te_country <- TZA_2015_te_sum %>% -->
+<!--   arrange(district,as.numeric(str_replace(te,"T",""))) %>% -->
+<!--   group_by(district) %>% -->
+<!--   summarise(te_sum = paste0(te,collapse = ","), -->
+<!--             te_label = paste0(label,collapse = ", ")) %>% ungroup() %>% -->
+<!--   rename(NAME_1 = district) %>% -->
+<!--   mutate(te_label = str_wrap(te_label, width = 20)) -->
+
+<!-- TZA_2015_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)}, -->
+<!--                            list(TZA1,TZA_2015_case,TZA_2015_te_country)) -->
+
+
+<!-- TZA_2015_neighbor_te <- merge(TZA_neighbors, -->
+<!--                               anno_withnode %>% -->
+<!--                                 filter(te != "sporadic/local outbreak" & -->
+<!--                                        te != "AFR16" & -->
+<!--                                        te != "AFR17") %>% -->
+<!--                                 filter(ISO3 %in% TZA_neighbors$ISO3 & -->
+<!--                                          year == 2015)%>% group_by(ISO3,te) %>% -->
+<!--                                 summarise(n = n()) %>% group_by(ISO3) %>% -->
+<!--                                 summarise(neighbor_label = -->
+<!--                                             paste0(te,collapse = ",")) %>% -->
+<!--                                 ungroup() %>% mutate(neighbor_label = -->
+<!--                                                        paste(ISO3," :\n",neighbor_label,sep = "")), -->
+<!--                               by = "ISO3",all.x = T) %>% -->
+<!--   mutate(neighbor_label = -->
+<!--            ifelse(is.na(neighbor_label), -->
+<!--                   paste(ISO3, " :\nNo data", sep = ""), -->
+<!--                   neighbor_label)) -->
+
+
+
+
+<!-- TZA_2015_neighbor_te$x = c(30,29,38,39,33.8,30,31,31) -->
+<!-- TZA_2015_neighbor_te$y = c(-3.2,-6,-1.5,-12,-11.3,-1.8,0,-10) -->
+<!-- TZA_2015_neighbor_te$size = c('s','l','l','l','s','s','l','l') -->
+
+<!-- fig_TZA_2015_te <- TZA_2015_case_te %>% ggplot()  + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     fill="white" -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     aes(fill=te_sum), -->
+<!--                                     data=TZA_2015_case_te %>%  -->
+<!--                                           filter(!is.na(te_sum)) -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     ) + -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=TZA_2015_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(28,41), -->
+<!--                                      ylim = c(-12,0)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_cocir -->
+<!--                                               ) -->
+
+<!-- fig_TZA_2015_case <- TZA_2015_case_te %>% ggplot()   + -->
+<!--                             geom_sf(data=TZA_2015_case_te, -->
+<!--                                     aes(fill=case_cat), -->
+<!--                                     size=1 -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     )+ -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=TZA_2015_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(28,41), -->
+<!--                                      ylim = c(-12,0)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_case -->
+<!--                                               ) -->
+
+
+<!-- fig_TZA_2015_cocir <- ggarrange(fig_TZA_2015_te, -->
+<!--                             fig_TZA_2015_case, -->
+<!--                             nrow = 1 -->
+<!--                             ) -->
+
+
+
+<!-- print(fig_TZA_2015_cocir) -->
+<!-- ``` -->
+
+
+<!-- ####TZA: 2017 -->
+
+<!-- ```{r co-circulation_TZA_2017, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"} -->
+
+<!-- TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI", -->
+<!--                                      "ZMB","MWI","MOZ","COD")) -->
+
+<!-- ####TZA_2017 -->
+
+<!-- TZA_2017_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>% -->
+<!--   dplyr::select(NAME_1,cases17) %>% -->
+<!--   rename(case_n = cases17) %>% -->
+<!--   mutate(case_cat = factor(case_when(case_n == 0 ~ 1, -->
+<!--                                      case_n > 100 ~ 4), -->
+<!--                            labels = c("0","101-"))) -->
+
+
+<!-- TZA_2017_te <- anno_withnode %>% -->
+<!--               filter(!stri_isempty(district) & -->
+<!--                      te != "sporadic/local outbreak" & -->
+<!--                      te != "AFR16" & -->
+<!--                      te != "AFR17" -->
+<!--                      ) %>% -->
+<!--   filter(ISO3 == "TZA" & year == 2017) -->
+
+<!-- TZA_2017_te_sum <- TZA_2017_te %>% group_by(district,te) %>% -->
+<!--   summarise(n = n()) %>% ungroup() %>% -->
+<!--   mutate(label = paste(te," : ",n,sep = "")) -->
+
+<!-- TZA_2017_te_country <- TZA_2017_te_sum %>% -->
+<!--   arrange(district,as.numeric(str_replace(te,"T",""))) %>% -->
+<!--   group_by(district) %>% -->
+<!--   summarise(te_sum = paste0(te,collapse = ","), -->
+<!--             te_label = paste0(label,collapse = ", ")) %>% ungroup() %>% -->
+<!--   rename(NAME_1 = district) %>% -->
+<!--   mutate(te_label = str_wrap(te_label, width = 20)) -->
+
+<!-- TZA_2017_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)}, -->
+<!--                            list(TZA1,TZA_2017_case,TZA_2017_te_country)) -->
+
+
+<!-- TZA_2017_neighbor_te <- merge(TZA_neighbors, -->
+<!--                               anno_withnode %>% -->
+<!--                                 filter(te != "sporadic/local outbreak" & -->
+<!--                                        te != "AFR16" & -->
+<!--                                        te != "AFR17") %>% -->
+<!--                                 filter(ISO3 %in% TZA_neighbors$ISO3 & -->
+<!--                                          year == 2017)%>% group_by(ISO3,te) %>% -->
+<!--                                 summarise(n = n()) %>% group_by(ISO3) %>% -->
+<!--                                 summarise(neighbor_label = -->
+<!--                                             paste0(te,collapse = ",")) %>% -->
+<!--                                 ungroup() %>% mutate(neighbor_label = -->
+<!--                                                        paste(ISO3," :\n",neighbor_label,sep = "")), -->
+<!--                               by = "ISO3",all.x = T) %>% -->
+<!--   mutate(neighbor_label = -->
+<!--            ifelse(is.na(neighbor_label), -->
+<!--                   paste(ISO3, " :\nNo data", sep = ""), -->
+<!--                   neighbor_label)) -->
+
+
+
+
+<!-- TZA_2017_neighbor_te$x = c(30,29,38,39,33.8,30,31,31) -->
+<!-- TZA_2017_neighbor_te$y = c(-3.2,-6,-1.5,-12,-11.3,-1.8,0,-10) -->
+<!-- TZA_2017_neighbor_te$size = c('s','l','l','l','s','s','l','l') -->
+
+<!-- fig_TZA_2017_te <- TZA_2017_case_te %>% ggplot()  + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     fill="white" -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     aes(fill=te_sum), -->
+<!--                                     data=TZA_2017_case_te %>%  -->
+<!--                                           filter(!is.na(te_sum)) -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     ) + -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=TZA_2017_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(28,41), -->
+<!--                                      ylim = c(-12,0)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_cocir -->
+<!--                                               ) -->
+
+<!-- fig_TZA_2017_case <- TZA_2017_case_te %>% ggplot()   + -->
+<!--                             geom_sf(data=TZA_2017_case_te, -->
+<!--                                     aes(fill=case_cat), -->
+<!--                                     size=1 -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     )+ -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=TZA_2017_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(28,41), -->
+<!--                                      ylim = c(-12,0)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_case -->
+<!--                                               ) -->
+
+
+<!-- fig_TZA_2017_cocir <- ggarrange(fig_TZA_2017_te, -->
+<!--                             fig_TZA_2017_case, -->
+<!--                             nrow = 1 -->
+<!--                             ) -->
+
+
+
+<!-- print(fig_TZA_2017_cocir) -->
+<!-- ``` -->
+
+<!-- ####TZA: 2018 -->
+
+<!-- ```{r co-circulation_TZA_2018, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"} -->
+
+<!-- TZA_neighbors <- data.frame(ISO3 = c("UGA","KEN","RWA","BDI", -->
+<!--                                      "ZMB","MWI","MOZ","COD")) -->
+
+<!-- ####TZA_2018 -->
+
+<!-- TZA_2018_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "TZA") %>% -->
+<!--   dplyr::select(NAME_1,cases18) %>% -->
+<!--   rename(case_n = cases18) %>% -->
+<!--   mutate(case_cat = factor(case_when(case_n == 0 ~ 1, -->
+<!--                                      case_n > 100 ~ 4), -->
+<!--                            labels = c("0","101-"))) -->
+
+
+<!-- TZA_2018_te <- anno_withnode %>% -->
+<!--               filter(!stri_isempty(district) & -->
+<!--                      te != "sporadic/local outbreak" & -->
+<!--                      te != "AFR16" & -->
+<!--                      te != "AFR17" -->
+<!--                      ) %>% -->
+<!--   filter(ISO3 == "TZA" & year == 2018) -->
+
+<!-- TZA_2018_te_sum <- TZA_2018_te %>% group_by(district,te) %>% -->
+<!--   summarise(n = n()) %>% ungroup() %>% -->
+<!--   mutate(label = paste(te," : ",n,sep = "")) -->
+
+<!-- TZA_2018_te_country <- TZA_2018_te_sum %>% -->
+<!--   arrange(district,as.numeric(str_replace(te,"T",""))) %>% -->
+<!--   group_by(district) %>% -->
+<!--   summarise(te_sum = paste0(te,collapse = ","), -->
+<!--             te_label = paste0(label,collapse = ", ")) %>% ungroup() %>% -->
+<!--   rename(NAME_1 = district) %>% -->
+<!--   mutate(te_label = str_wrap(te_label, width = 20)) -->
+
+<!-- TZA_2018_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)}, -->
+<!--                            list(TZA1,TZA_2018_case,TZA_2018_te_country)) -->
+
+
+<!-- TZA_2018_neighbor_te <- merge(TZA_neighbors, -->
+<!--                               anno_withnode %>% -->
+<!--                                 filter(te != "sporadic/local outbreak" & -->
+<!--                                        te != "AFR16" & -->
+<!--                                        te != "AFR17") %>% -->
+<!--                                 filter(ISO3 %in% TZA_neighbors$ISO3 & -->
+<!--                                          year == 2018)%>% group_by(ISO3,te) %>% -->
+<!--                                 summarise(n = n()) %>% group_by(ISO3) %>% -->
+<!--                                 summarise(neighbor_label = -->
+<!--                                             paste0(te,collapse = ",")) %>% -->
+<!--                                 ungroup() %>% mutate(neighbor_label = -->
+<!--                                                        paste(ISO3," :\n",neighbor_label,sep = "")), -->
+<!--                               by = "ISO3",all.x = T) %>% -->
+<!--   mutate(neighbor_label = -->
+<!--            ifelse(is.na(neighbor_label), -->
+<!--                   paste(ISO3, " :\nNo data", sep = ""), -->
+<!--                   neighbor_label)) -->
+
+
+
+
+<!-- TZA_2018_neighbor_te$x = c(30,29,38,39,33.8,30,31,31) -->
+<!-- TZA_2018_neighbor_te$y = c(-3.2,-6,-1.5,-12,-11.3,-1.8,0,-10) -->
+<!-- TZA_2018_neighbor_te$size = c('s','l','l','l','s','s','l','l') -->
+
+<!-- fig_TZA_2018_te <- TZA_2018_case_te %>% ggplot()  + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     fill="white" -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     aes(fill=te_sum), -->
+<!--                                     data=TZA_2018_case_te %>%  -->
+<!--                                           filter(!is.na(te_sum)) -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     ) + -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=TZA_2018_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(28,41), -->
+<!--                                      ylim = c(-12,0)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_cocir -->
+<!--                                               ) -->
+
+<!-- fig_TZA_2018_case <- TZA_2018_case_te %>% ggplot()   + -->
+<!--                             geom_sf(data=TZA_2018_case_te, -->
+<!--                                     aes(fill=case_cat), -->
+<!--                                     size=1 -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     )+ -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=TZA_2018_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(28,41), -->
+<!--                                      ylim = c(-12,0)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_case -->
+<!--                                               ) -->
+
+
+<!-- fig_TZA_2018_cocir <- ggarrange(fig_TZA_2018_te, -->
+<!--                             fig_TZA_2018_case, -->
+<!--                             nrow = 1 -->
+<!--                             ) -->
+
+
+
+<!-- print(fig_TZA_2018_cocir) -->
+<!-- ``` -->
+
+<!-- ####UGA: 2015 -->
+
+<!-- ```{r co-circulation_UGA_2015, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"} -->
+
+<!-- UGA_neighbors <- data.frame(ISO3 = c("SSD","KEN","TZA","RWA","COD")) -->
+<!-- ####UGA_2015 -->
+
+<!-- UGA_2015_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "UGA") %>% -->
+<!--   dplyr::select(NAME_1,cases15) %>% -->
+<!--   rename(case_n = cases15) %>% -->
+<!--   mutate(case_cat = factor(case_when(case_n == 0 ~ 1, -->
+<!--                                       case_n > 0 & case_n <= 10 ~ 2, -->
+<!--                                       case_n > 10 & case_n <= 100 ~ 3, -->
+<!--                                       case_n > 100 ~ 4), -->
+<!--                            labels = c("0","1-10","11-100","101-"))) -->
+
+
+<!-- UGA_2015_te <- anno_withnode %>% -->
+<!--               filter(!stri_isempty(district) & -->
+<!--                      te != "sporadic/local outbreak" & -->
+<!--                      te != "AFR16" & -->
+<!--                      te != "AFR17" -->
+<!--                      ) %>% -->
+<!--   filter(ISO3 == "UGA" & year == 2015) -->
+
+<!-- UGA_2015_te_sum <- UGA_2015_te %>% group_by(district,te) %>% -->
+<!--   summarise(n = n()) %>% ungroup() %>% -->
+<!--   mutate(label = paste(te," : ",n,sep = "")) -->
+
+<!-- UGA_2015_te_country <- UGA_2015_te_sum %>% -->
+<!--   arrange(district,as.numeric(str_replace(te,"T",""))) %>% -->
+<!--   group_by(district) %>% -->
+<!--   summarise(te_sum = paste0(te,collapse = ","), -->
+<!--             te_label = paste0(label,collapse = ", ")) %>% ungroup() %>% -->
+<!--   rename(NAME_1 = district) %>% -->
+<!--   mutate(te_label = str_wrap(te_label, width = 20)) -->
+
+<!-- UGA_2015_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)}, -->
+<!--                            list(UGA1,UGA_2015_case,UGA_2015_te_country)) -->
+
+
+<!-- UGA_2015_neighbor_te <- merge(UGA_neighbors, -->
+<!--                               anno_withnode %>% -->
+<!--                                 filter(te != "sporadic/local outbreak" & -->
+<!--                                        te != "AFR16" & -->
+<!--                                        te != "AFR17") %>% -->
+<!--                                 filter(ISO3 %in% UGA_neighbors$ISO3 & -->
+<!--                                          year == 2015)%>% group_by(ISO3,te) %>% -->
+<!--                                 summarise(n = n()) %>% group_by(ISO3) %>% -->
+<!--                                 summarise(neighbor_label = -->
+<!--                                             paste0(te,collapse = ",")) %>% -->
+<!--                                 ungroup() %>% mutate(neighbor_label = -->
+<!--                                                        paste(ISO3," :\n",neighbor_label,sep = "")), -->
+<!--                               by = "ISO3",all.x = T) %>% -->
+<!--   mutate(neighbor_label = -->
+<!--            ifelse(is.na(neighbor_label), -->
+<!--                   paste(ISO3, " :\nNo data", sep = ""), -->
+<!--                   neighbor_label)) -->
+
+
+
+
+<!-- UGA_2015_neighbor_te$x = c(30,35,30,32,33) -->
+<!-- UGA_2015_neighbor_te$y = c(2,0.5,-1.9,4.5,-1.5) -->
+<!-- UGA_2015_neighbor_te$size = c('l','l','s','l','l') -->
+
+
+<!-- fig_UGA_2015_te <- UGA_2015_case_te %>% ggplot()  + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     fill="white" -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     aes(fill=te_sum), -->
+<!--                                     data=UGA_2015_case_te %>%  -->
+<!--                                           filter(!is.na(te_sum)) -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     ) + -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=UGA_2015_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(29.5,35.4), -->
+<!--                                      ylim = c(-2,4.4)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_cocir -->
+<!--                                               ) -->
+
+<!-- fig_UGA_2015_case <- UGA_2015_case_te %>% ggplot()   + -->
+<!--                             geom_sf(data=UGA_2015_case_te, -->
+<!--                                     aes(fill=case_cat), -->
+<!--                                     size=1 -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     )+ -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=UGA_2015_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(29.5,35.4), -->
+<!--                                      ylim = c(-2,4.4)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_case -->
+<!--                                               ) -->
+
+
+<!-- fig_UGA_2015_cocir <- ggarrange(fig_UGA_2015_te, -->
+<!--                             fig_UGA_2015_case, -->
+<!--                             nrow = 1 -->
+<!--                             ) -->
+
+
+
+<!-- print(fig_UGA_2015_cocir) -->
+<!-- ``` -->
+
+<!-- ####UGA: 2018 -->
+
+<!-- ```{r co-circulation_UGA_2018, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"} -->
+
+<!-- UGA_neighbors <- data.frame(ISO3 = c("SSD","KEN","TZA","RWA","COD")) -->
+<!-- ####UGA_2018 -->
+
+<!-- UGA_2018_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "UGA") %>% -->
+<!--   dplyr::select(NAME_1,cases18) %>% -->
+<!--   rename(case_n = cases18) %>% -->
+<!--   mutate(case_cat = factor(case_when(case_n == 0 ~ 1, -->
+<!--                                       case_n > 0 & case_n <= 10 ~ 2, -->
+<!--                                       case_n > 10 & case_n <= 100 ~ 3, -->
+<!--                                       case_n > 100 ~ 4), -->
+<!--                            labels = c("0","1-10","11-100","101-"))) -->
+
+
+<!-- UGA_2018_te <- anno_withnode %>% -->
+<!--               filter(!stri_isempty(district) & -->
+<!--                      te != "sporadic/local outbreak" & -->
+<!--                      te != "AFR16" & -->
+<!--                      te != "AFR17" -->
+<!--                      ) %>% -->
+<!--   filter(ISO3 == "UGA" & year == 2018) -->
+
+<!-- UGA_2018_te_sum <- UGA_2018_te %>% group_by(district,te) %>% -->
+<!--   summarise(n = n()) %>% ungroup() %>% -->
+<!--   mutate(label = paste(te," : ",n,sep = "")) -->
+
+<!-- UGA_2018_te_country <- UGA_2018_te_sum %>% -->
+<!--   arrange(district,as.numeric(str_replace(te,"T",""))) %>% -->
+<!--   group_by(district) %>% -->
+<!--   summarise(te_sum = paste0(te,collapse = ","), -->
+<!--             te_label = paste0(label,collapse = ", ")) %>% ungroup() %>% -->
+<!--   rename(NAME_1 = district) %>% -->
+<!--   mutate(te_label = str_wrap(te_label, width = 20)) -->
+
+<!-- UGA_2018_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)}, -->
+<!--                            list(UGA1,UGA_2018_case,UGA_2018_te_country)) -->
+
+
+<!-- UGA_2018_neighbor_te <- merge(UGA_neighbors, -->
+<!--                               anno_withnode %>% -->
+<!--                                 filter(te != "sporadic/local outbreak" & -->
+<!--                                        te != "AFR16" & -->
+<!--                                        te != "AFR17") %>% -->
+<!--                                 filter(ISO3 %in% UGA_neighbors$ISO3 & -->
+<!--                                          year == 2018)%>% group_by(ISO3,te) %>% -->
+<!--                                 summarise(n = n()) %>% group_by(ISO3) %>% -->
+<!--                                 summarise(neighbor_label = -->
+<!--                                             paste0(te,collapse = ",")) %>% -->
+<!--                                 ungroup() %>% mutate(neighbor_label = -->
+<!--                                                        paste(ISO3," :\n",neighbor_label,sep = "")), -->
+<!--                               by = "ISO3",all.x = T) %>% -->
+<!--   mutate(neighbor_label = -->
+<!--            ifelse(is.na(neighbor_label), -->
+<!--                   paste(ISO3, " :\nNo data", sep = ""), -->
+<!--                   neighbor_label)) -->
+
+
+
+
+<!-- UGA_2018_neighbor_te$x = c(30,35,30,32,33) -->
+<!-- UGA_2018_neighbor_te$y = c(2,0.5,-1.9,4.5,-1.5) -->
+<!-- UGA_2018_neighbor_te$size = c('l','l','s','l','l') -->
+
+
+<!-- fig_UGA_2018_te <- UGA_2018_case_te %>% ggplot()  + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     fill="white" -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     aes(fill=te_sum), -->
+<!--                                     data=UGA_2018_case_te %>%  -->
+<!--                                           filter(!is.na(te_sum)) -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     ) + -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=UGA_2018_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(29.5,35.4), -->
+<!--                                      ylim = c(-2,4.4)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_cocir -->
+<!--                                               ) -->
+
+<!-- fig_UGA_2018_case <- UGA_2018_case_te %>% ggplot()   + -->
+<!--                             geom_sf(data=UGA_2018_case_te, -->
+<!--                                     aes(fill=case_cat), -->
+<!--                                     size=1 -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     )+ -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=UGA_2018_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(29.5,35.4), -->
+<!--                                      ylim = c(-2,4.4)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_case -->
+<!--                                               ) -->
+
+
+<!-- fig_UGA_2018_cocir <- ggarrange(fig_UGA_2018_te, -->
+<!--                             fig_UGA_2018_case, -->
+<!--                             nrow = 1 -->
+<!--                             ) -->
+
+
+
+<!-- print(fig_UGA_2018_cocir) -->
+<!-- ``` -->
+
+
+<!-- ####ZMB: 2016 -->
+
+<!-- ```{r co-circulation_ZMB_2016, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"} -->
+
+<!-- ZMB_neighbors <- data.frame(ISO3 = c("AGO","TZA","MWI","COD", -->
+<!--                                      "MOZ","ZWE","BWA","NAM")) -->
+<!-- ####ZMB_2016 -->
+
+<!-- ZMB_2016_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx", sheet = "ZMB") %>% -->
+<!--   dplyr::select(NAME_1,cases16) %>% -->
+<!--   rename(case_n = cases16) %>% -->
+<!--   mutate(case_cat = factor(case_when(case_n == 0 ~ 1, -->
+<!--                                       case_n > 0 & case_n <= 10 ~ 2, -->
+<!--                                       case_n > 10 & case_n <= 100 ~ 3, -->
+<!--                                       case_n > 100 ~ 4), -->
+<!--                            labels = c("0","1-10","11-100","101-"))) -->
+
+
+<!-- ZMB_2016_te <- anno_withnode %>% -->
+<!--               filter(!stri_isempty(district) & -->
+<!--                      te != "sporadic/local outbreak" & -->
+<!--                      te != "AFR16" & -->
+<!--                      te != "AFR17" -->
+<!--                      ) %>% -->
+<!--   filter(ISO3 == "ZMB" & year == 2016) -->
+
+<!-- ZMB_2016_te_sum <- ZMB_2016_te %>% group_by(district,te) %>% -->
+<!--   summarise(n = n()) %>% ungroup() %>% -->
+<!--   mutate(label = paste(te," : ",n,sep = "")) -->
+
+<!-- ZMB_2016_te_country <- ZMB_2016_te_sum %>% -->
+<!--   arrange(district,as.numeric(str_replace(te,"T",""))) %>% -->
+<!--   group_by(district) %>% -->
+<!--   summarise(te_sum = paste0(te,collapse = ","), -->
+<!--             te_label = paste0(label,collapse = ", ")) %>% ungroup() %>% -->
+<!--   rename(NAME_1 = district) %>% -->
+<!--   mutate(te_label = str_wrap(te_label, width = 20)) -->
+
+<!-- ZMB_2016_case_te <- Reduce(function(x,y) {merge(x,y,by = "NAME_1",all.x = T)}, -->
+<!--                            list(ZMB1,ZMB_2016_case,ZMB_2016_te_country)) -->
+
+
+<!-- ZMB_2016_neighbor_te <- merge(ZMB_neighbors, -->
+<!--                               anno_withnode %>% -->
+<!--                                 filter(te != "sporadic/local outbreak" & -->
+<!--                                        te != "AFR16" & -->
+<!--                                        te != "AFR17") %>% -->
+<!--                                 filter(ISO3 %in% ZMB_neighbors$ISO3 & -->
+<!--                                          year == 2016)%>% group_by(ISO3,te) %>% -->
+<!--                                 summarise(n = n()) %>% group_by(ISO3) %>% -->
+<!--                                 summarise(neighbor_label = -->
+<!--                                             paste0(te,collapse = ",")) %>% -->
+<!--                                 ungroup() %>% mutate(neighbor_label = -->
+<!--                                                        paste(ISO3," :\n",neighbor_label,sep = "")), -->
+<!--                               by = "ISO3",all.x = T) %>% -->
+<!--   mutate(neighbor_label = -->
+<!--            ifelse(is.na(neighbor_label), -->
+<!--                   paste(ISO3, " :\nNo data", sep = ""), -->
+<!--                   neighbor_label)) -->
+
+
+
+
+<!-- ZMB_2016_neighbor_te$x = c(20,24,26,33,33.7,20,32,30) -->
+<!-- ZMB_2016_neighbor_te$y = c(-12,-19,-10,-15,-13,-19,-7.9,-18) -->
+<!-- ZMB_2016_neighbor_te$size = c('l','l','l','s','s','s','l','l') -->
+
+<!-- fig_ZMB_2016_te <- ZMB_2016_case_te %>% ggplot()  + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     fill="white" -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.6, -->
+<!--                                     aes(fill=te_sum), -->
+<!--                                     data=ZMB_2016_case_te %>%  -->
+<!--                                           filter(!is.na(te_sum)) -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     ) + -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=ZMB_2016_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(19.5,33.8), -->
+<!--                                      ylim = c(-20,-7)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_cocir -->
+<!--                                               ) -->
+
+<!-- fig_ZMB_2016_case <- ZMB_2016_case_te %>% ggplot()   + -->
+<!--                             geom_sf(data=ZMB_2016_case_te, -->
+<!--                                     aes(fill=case_cat), -->
+<!--                                     size=1 -->
+<!--                                     ) + -->
+<!--                             geom_sf(data=water_Africa, -->
+<!--                                     aes(fill=type) -->
+<!--                                     ) + -->
+<!--                             geom_sf(size=0.8, -->
+<!--                                     fill="transparent", -->
+<!--                                     data=all_countries0 -->
+<!--                                     )+ -->
+<!--                             geom_text(aes(label=neighbor_label, -->
+<!--                                           x=x, -->
+<!--                                           y=y -->
+<!--                                           ), -->
+<!--                                       data=ZMB_2016_neighbor_te -->
+<!--                                       ) + -->
+<!--                             coord_sf(xlim = c(19.5,33.8), -->
+<!--                                      ylim = c(-20,-7)) + -->
+<!--                             theme_map() +  -->
+<!--                             theme(legend.position="right") + -->
+<!--                             scale_fill_manual(name="", -->
+<!--                                               values=color_case -->
+<!--                                               ) -->
+
+
+<!-- fig_ZMB_2016_cocir <- ggarrange(fig_ZMB_2016_te, -->
+<!--                             fig_ZMB_2016_case, -->
+<!--                             nrow = 1 -->
+<!--                             ) -->
+
+
+
+<!-- print(fig_ZMB_2016_cocir) -->
+<!-- ``` -->
