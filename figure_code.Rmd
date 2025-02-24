@@ -145,7 +145,7 @@ water_Africa <- water_continent %>% filter(CONTINENT == "Africa")
 ```{r fig1A, echo=F, message=F, warning=F, fig.height=9, fig.width=9, background="white"}
 
 # read supplemental 1 data
-new_seq <- read_xlsx("./supp_data/supplementary_appendix_2.xlsx") %>% filter(meeting_criteria)
+new_seq <- read_xlsx("./supp_data/supplementary_appendix_3.xlsx") %>% filter(meeting_criteria)
 
 
 # 9 sequences from Kenya has no sub-country information and was excluded from this map
@@ -199,7 +199,7 @@ print(fig1_panelA)
 ```{r fig1B, echo=F, message=F, warning=F, fig.height=9, fig.width=9, background="white"}
 
 # read supplemental 2 data
-annotation_raw <- read_xlsx("./supp_data/supplementary_appendix_3.xlsx")
+annotation_raw <- read_xlsx("./supp_data/supplementary_appendix_2.xlsx")
 
 # filter out published genomes
 published_genomes <- annotation_raw %>% 
@@ -922,7 +922,7 @@ print(fig3_panelBD)
 ```{r fig3C, echo=F, message=F, warning=F, fig.height=8, fig.width=12, background="white"}
 
 # read T13 tMRCA posterior data 
-T13_tMRCA <- read_xlsx("./supp_data/supplementary_appendix_8.xlsx") %>%
+T13_tMRCA <- read_xlsx("./supp_data/supplementary_appendix_9.xlsx") %>%
               rename(value=`out_tMRCA_T13_TreeStat_ed_Age.log:age(T13)`)
 
 # get the density data
@@ -1728,7 +1728,7 @@ print(fig4_panelD)
 ```{r supp_fig1A, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
 vc_1488_rtt <- 
-  read_xlsx("./supp_data/supplementary_appendix_9.xlsx",
+  read_xlsx("./supp_data/supplementary_appendix_8.xlsx",
              sheet = "full_tree")
 
 
@@ -1767,7 +1767,7 @@ print(suppfig1_panelA)
 
 ```{r supp_fig1B, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
-vc_wave3_rtt <- read_xlsx("./supp_data/supplementary_appendix_9.xlsx",
+vc_wave3_rtt <- read_xlsx("./supp_data/supplementary_appendix_8.xlsx",
                          sheet="wave3_tree")
 
 
