@@ -19,6 +19,7 @@ knitr::opts_chunk$set(root.dir = './',
 
 
 ```{r loading packages, echo=F, message=F, warning=F}
+
 # loading housekeeping packages
 library(tidyverse)
 library(lubridate)
@@ -50,8 +51,9 @@ library(viridis)
 
 
 ```{r downloading maps, echo=F, message=F, warning=F}
-if (!dir.exists("./maps")){
-  dir.create("./maps")
+# create directory for the maps
+if (!dir.exists("maps")){
+  dir.create("maps")
 }
 
 # downloading and loading level 0 country maps
@@ -116,16 +118,17 @@ country_code <- c("UGA"="#76CCAE",
 
 # downloading and loading water shape file
 ## wet land map downloaded from: https://files.worldwildlife.org/wwfcmsprod/files/Publication/file/8ark3lcpfw_GLWD_level1.zip?_ga=2.269024947.35138699.1698458757-1278031685.1698458757
-###download the maps into the maps folder
 
-unzip("./maps/8ark3lcpfw_GLWD_level1.zip",
-      exdir="./maps")
+## unzip the water shape file
+unzip("maps/8ark3lcpfw_GLWD_level1.zip",
+      exdir="maps")
 
 
-
-water <- st_read("./maps/glwd_1.shp", quiet=TRUE) %>%
+##set up the coordinate referece system for the water shape file
+water <- st_read("maps/glwd_1.shp", quiet=TRUE) %>%
   st_set_crs(4326) %>%mutate(type="water")
 
+##water by continent
 water_continent <- water %>% mutate(CONTINENT=
                                       countrycode(sourcevar=COUNTRY,
                                                   origin="country.name",
@@ -133,7 +136,7 @@ water_continent <- water %>% mutate(CONTINENT=
                                                   )
                                     )
 
-##filter water in Africa
+##get water shape file for africa
 water_Africa <- water_continent %>% filter(CONTINENT == "Africa")
 
 ```
@@ -142,21 +145,23 @@ water_Africa <- water_continent %>% filter(CONTINENT == "Africa")
 ### Figure 1A: Geographic distribution of genomes generated in this study
 ```{r fig1A, echo=F, message=F, warning=F, fig.height=9, fig.width=9, background="white"}
 
-# read supplemental 1 data
-new_seq <- read_xlsx("./supp_data/supplementary_appendix_3.xlsx") %>% filter(meeting_criteria)
+# read Appendix 2- Tab 2: Sample metadata and sequencing metrics
+## filter out genomes not meeting criteria
+new_seq <- 
+  read_xlsx("supp_data/Appendix2.xlsx",
+            sheet="Tab2-Metrics",
+            skip=2) %>% 
+  filter(meeting_criteria)
 
 
 # 9 sequences from Kenya has no sub-country information and was excluded from this map
-
 newseq_withloc <- new_seq %>% 
                   filter(!stri_isempty(Location_level1))
 
 # summarize the number of samples by geographical location
-
 newseq_level1 <- newseq_withloc %>% 
                  group_by(Location_level1) %>%
                  mutate(n=n()) %>% ungroup()
-
 n_level1 <- newseq_level1 %>% 
             dplyr::select(c(Location_level1, n))
 
@@ -196,8 +201,10 @@ print(fig1_panelA)
 ### Figure 1B: Genomes generated in this study (dark bars) overlaid on previously published genomes (light bars), per country and per year
 ```{r fig1B, echo=F, message=F, warning=F, fig.height=9, fig.width=9, background="white"}
 
-# read supplemental 2 data
-annotation_raw <- read_xlsx("./supp_data/supplementary_appendix_2.xlsx")
+# read Appendix 2- Tab 1: Background sequence accessions and metadata
+annotation_raw <- read_xlsx("supp_data/Appendix2.xlsx",
+            sheet="Tab1-Background",
+            skip=2)
 
 # filter out published genomes
 published_genomes <- annotation_raw %>% 
@@ -240,9 +247,10 @@ seq_num <- rbind(published_genomes,sequenced_new) %>%
                                     )
                                 ))
 
-# read supplemental 2 data
-case_data <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
-                       sheet="country_level") %>% 
+# read Appendix 3 - TAB 1: Cholera case counts by country and year
+case_data <- read_xlsx("supp_data/Appendix3.xlsx",
+                       sheet="Tab1-Country",
+                       skip=2) %>% 
              rename(year=Year) %>%
              mutate(Country=factor(case_when(
                                         Country == "Kenya" ~ 2,
@@ -363,10 +371,11 @@ print(fig1_panelB)
 # take a random subsample of the original fastq file for normalization 
 # mapping stats after down-sampling to 1 million reads(if less than just take all)
 
-# read the mapping data after down-sampling
+# read Appendix 2 - TAB 3: Median depth distribution by sample type from sub-sampling analysis
 subsample_bysample_depth <-
-  read_xlsx("./supp_data/supplementary_appendix_5.xlsx") 
-
+  read_xlsx("supp_data/Appendix2.xlsx",
+            sheet="Tab3-DepthByType",
+            skip=2) 
 
 ## outlier statistics
 subsample_bysample_depth_stats <- subsample_bysample_depth %>%
@@ -420,10 +429,13 @@ print(fig1_panelC)
 # take a sliding window and summarize the coverage by its median(Metsky, H.C. et al., 2017)
 
 # use a 4000 bp sliding window
+# read Appendix 2 - TAB 4: Median depth distribution by nucleotide position (4000-nt aggregated) after downsampling
 subsample_pos_cov_binned <- 
-  read_xlsx("./supp_data/supplementary_appendix_6.xlsx") 
+  read_xlsx("supp_data/Appendix2.xlsx",
+            sheet="Tab4-DepthByPos",
+            skip=2) 
 
-###chromosome split point
+##chromosome split point
 chr_split <- round(2961182/4000)
 
 ###fig1D
@@ -467,7 +479,7 @@ print(fig1_panelD)
 ```{r prepare tree file, echo=F, message=F, warning=F}
 
 # read ML tree
-tree_1488 <- read.tree("./supp_data/supplementary_appendix_7.treefile")
+tree_1488 <- read.tree("supp_data/Appendix4.tree")
 
 # obtain the nodes of the tree
 node <- as_tibble(tree_1488) %>% mutate(label=gsub("'",'',label),
@@ -828,8 +840,10 @@ print(fig3_panelBD)
 
 ```{r fig3C, echo=F, message=F, warning=F, fig.height=8, fig.width=12, background="white"}
 
-# read T13 tMRCA posterior data 
-T13_tMRCA <- read_xlsx("./supp_data/supplementary_appendix_8.xlsx") %>%
+## Appendix 2 - TAB 5: Raw data file for posterior distribution of tMRCA of the AFR13 sub-lineage
+T13_tMRCA <- read_xlsx("supp_data/Appendix2.xlsx",
+                       sheet="Tab5-tMRCA",
+                       skip=2) %>%
               rename(value=`out_tMRCA_T13_TreeStat_ed_Age.log:age(T13)`)
 
 # get the density data
@@ -963,9 +977,11 @@ KEN_neighbors <- data.frame(ISO3=c("UGA",
                                    "ETH",
                                    "SSD")
                             )
-# read Kenya 2009 case data
-KEN_2009_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
-                           sheet="KEN") %>%
+# Appendix 3 - TAB 2: Cholera case counts in Kenya by sub-country location and year
+## case numbers in Kenya - 2009
+KEN_2009_case <- read_xlsx("supp_data/Appendix3.xlsx",
+                           sheet="Tab2-Kenya",
+                           skip=2) %>%
                   dplyr::select(NAME_1, cases09) %>%
                   rename(case_n=cases09) %>%
                   mutate(case_cat=factor(
@@ -1127,9 +1143,11 @@ print(fig4_panelA)
 
 ```{r fig4B, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
 
-# read Kenya 2010 case data
-KEN_2010_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
-                           sheet="KEN") %>%
+# Appendix 3 - TAB 2: Cholera case counts in Kenya by sub-country location and year
+## case numbers in Kenya - 2010
+KEN_2010_case <- read_xlsx("supp_data/Appendix3.xlsx",
+                           sheet="Tab2-Kenya",
+                           skip=2) %>%
                   dplyr::select(NAME_1, cases10) %>%
                   rename(case_n=cases10) %>%
                   mutate(case_cat=factor(
@@ -1297,9 +1315,11 @@ MWI_neighbors <- data.frame(ISO3=c("TZA",
                                    "MOZ"
                                    )
                             )
-# read Malawi 2015 case data
-MWI_2015_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
-                           sheet="MWI") %>%
+# Appendix 3 - TAB 4: Cholera case counts in Malawi by sub-country location and year
+## case numbers in Malawi - 2015
+MWI_2015_case <- read_xlsx("supp_data/Appendix3.xlsx",
+                           sheet="Tab4-Malawi",
+                           skip=2) %>%
                   dplyr::select(NAME_1, cases15) %>%
                   rename(case_n=cases15) %>%
                   mutate(case_cat=factor(
@@ -1462,15 +1482,12 @@ print(fig4_panelC)
 
 ```{r fig4D, echo=F, message=F, warning=F, fig.height=8, fig.width=16, background="white"}
 
-MWI_neighbors <- data.frame(ISO3=c("TZA",
-                                   "ZMB",
-                                   "MOZ",
-                                   "MOZ"
-                                   )
-                            )
-# read Malawi 2016 case data
-MWI_2016_case <- read_xlsx("./supp_data/supplementary_appendix_4.xlsx",
-                           sheet="MWI") %>%
+
+# Appendix 3 - TAB 4: Cholera case counts in Malawi by sub-country location and year
+## case numbers in Malawi - 2016
+MWI_2016_case <- read_xlsx("supp_data/Appendix3.xlsx",
+                           sheet="Tab4-Malawi",
+                           skip=2) %>%
                   dplyr::select(NAME_1, cases16) %>%
                   rename(case_n=cases16) %>%
                   mutate(case_cat=factor(
@@ -1633,15 +1650,20 @@ print(fig4_panelD)
 
 ```{r supp_fig1A, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
+# Appendix 5 - TAB 1: Root-to-tip distance and residual from best-fit line for all sequences in tree
 vc_1488_rtt <- 
-  read_xlsx("./supp_data/supplementary_appendix_9.xlsx",
-             sheet = "full_tree")
+  read_xlsx("supp_data/Appendix5.xlsx",
+             sheet = "Tab1-ALL",
+             skip=2)
 
+# fit the regression line
 vc_1488_rtt_model <- lm(distance ~ date, data=vc_1488_rtt)
 
+## get the x intercept
 vc_1488_rtt_xintercept <- -coef(vc_1488_rtt_model)[1]/coef(vc_1488_rtt_model)[2]
 
 
+## Supp Figure 1A
 suppfig1_panelA <- vc_1488_rtt %>% ggplot() + 
                           aes(x=date, y=distance) +
                           geom_point(aes(color=group)) +
@@ -1681,13 +1703,19 @@ print(suppfig1_panelA)
 
 ```{r supp_fig1B, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
-vc_wave3_rtt <- read_xlsx("./supp_data/supplementary_appendix_9.xlsx",
-                         sheet="wave3_tree")
+# Appendix 5 - TAB 2: Root-to-tip distance and residual from best-fit line for all Wave 3 sequences
+vc_wave3_rtt <- 
+  read_xlsx("supp_data/Appendix5.xlsx",
+             sheet = "Tab2-Wave3",
+             skip=2)
 
+# fit the regression line
 vc_wave3_rtt_model <- lm(distance ~ date, data=vc_wave3_rtt)
 
+## get the x intercept
 vc_wave3_rtt_xintercept <- -coef(vc_wave3_rtt_model)[1]/coef(vc_wave3_rtt_model)[2]
 
+## Supp Figure 1B
 suppfig1_panelB <- vc_wave3_rtt %>% ggplot() + 
                         aes(x=date,
                             y=distance) +
@@ -1721,13 +1749,16 @@ print(suppfig1_panelB)
 ```{r supp_fig3A, echo=F, message=F, warning=F, fig.height=8, fig.width=8, background="white"}
 
 
-afr13_rtt <- read_xlsx("./supp_data/supplementary_appendix_9.xlsx",
-                         sheet="afr13_clade") %>% 
+# Appendix 5 - TAB 3: Root-to-tip distance and residual from best-fit line for AFR13 sequences
+afr13_rtt <- read_xlsx("supp_data/Appendix5.xlsx",
+                       sheet = "Tab3-AFR13",
+                       skip=2) %>% 
   mutate(tip=recode(tip,
                     "CP003069.1_CP003070.1" = "CP003069.1/CP003070.1"),
          distance=as.numeric(distance),
          residual=as.numeric(residual))
 
+## merge with annotation file
 afr13_rtt_withanno <- 
   merge(afr13_rtt,
         anno_withnode %>% 
@@ -1748,11 +1779,13 @@ afr13_rtt_withanno <-
                       "Published Tanzania isolates\nassembled from contigs")))
 
 
+## fit the regression model
 afr13_rtt_model <- lm(distance ~ date, data=afr13_rtt_withanno)
 
+## get the x intercept
 afr13_rtt_xintercept <- -coef(afr13_rtt_model)[1]/coef(afr13_rtt_model)[2]
 
-
+## Supp Fig3A
 suppfig3_panelA <- afr13_rtt_withanno %>% ggplot() + 
   aes(x=date, y=distance) +
   geom_point(aes(color=group)) +
@@ -1848,10 +1881,11 @@ afr13_rtt_withoutcontig <-
          )
                   
 
-
+## fit the regression model
 afr13_rtt_withoutcontig_model <- 
   lm(distance ~ date, data=afr13_rtt_withoutcontig)
 
+## get the x intercept
 afr13_rtt_withoutcontig_xintercept <- 
   -coef(afr13_rtt_withoutcontig_model)[1]/coef(afr13_rtt_withoutcontig_model)[2]
 
